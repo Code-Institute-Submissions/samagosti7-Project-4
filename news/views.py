@@ -10,7 +10,7 @@ class PostList(generic.ListView):
     paginate_by = 6
 
 
-class PostIndex(View):
+class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
@@ -22,7 +22,7 @@ class PostIndex(View):
 
         return render(
             request, 
-            "post_index.html",
+            "post_detail.html",
             {
                 "post": post,
                 "comments": comments,
