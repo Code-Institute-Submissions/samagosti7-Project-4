@@ -81,7 +81,7 @@ class PostLike(View):
 class MakePostView(View):
 
     def get(self, request):
-        
+
         post_form = PostForm()
 
         return render(
@@ -98,7 +98,7 @@ class MakePostView(View):
         if post_form.is_valid():
             post_form.instance.email = request.user.email
             post_form.instance.name = request.user.username
-            post = post_form.save(commit=False)
+            post = post_form.save()
             # comment.post = post
             post.save()
         else:
