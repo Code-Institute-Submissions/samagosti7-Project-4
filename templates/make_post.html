@@ -1,0 +1,46 @@
+{% extends "base.html" %} 
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+{% if user.is_authenticated %}
+
+<div class="container">
+    <div class="row g-0">
+        <div class="col-md-6 masthead-text">
+            <div class="card card-body pb-0">
+
+                <h3 class="mb-3">Ask Question</h3>
+
+                <!-- Question form -->
+                <form method="POST" action="{% url 'make_post' %}">
+                    {{ post_form | crispy }}
+                    {% csrf_token %}
+
+                    <div class="text-center my-4">
+                        <button type="submit" class="btn btn--main">Submit</button>
+                        <a class="btn btn--secondary mx-1" href="{% url 'home' %}">Cancel</a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% else %}
+
+<div class="container">
+    <div class="row g-0">
+        <div class="col-md-6 masthead-text">
+
+            <h3 class="mb-3">Gotta sign in to make a post! Sign in from the homepage.</h3>
+
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock %}
