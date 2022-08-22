@@ -96,8 +96,9 @@ class MakePostView(View):
 
         post_form = PostForm(data=request.POST)
         if post_form.is_valid():
-            post_form.instance.email = request.user.email
-            post_form.instance.name = request.user.username
+            # post_form.instance.email = request.user.email
+            post_form.instance.author = request.user
+            print(dir(post_form))
             post = post_form.save()
             # comment.post = post
             post.save()
