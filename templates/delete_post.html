@@ -1,0 +1,47 @@
+{% extends base.html %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+{% if request.user == post.author}
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="card mb-4 text-center">
+                        <div class="card-body">
+                            <div>Delete Post?</div>
+                            <form method="POST" action="{% url 'delete_post' post.id %}">
+                                {% csrf token %}
+                                <div>
+                                    Are you sure you want to delete this post?
+                                </div>
+                                <div>
+                                    {{ post.title }}
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-main">Yes</button>
+                                    <a href="{% url 'home' %}">No</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+
+<div class="container-fluid">
+    <div class="row">
+            <div>
+                You are not authorized to delete this post.
+            <div>
+    </div>
+</div>
+ {% endif %}

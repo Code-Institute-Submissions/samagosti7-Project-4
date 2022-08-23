@@ -8,7 +8,7 @@
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                <div class="col-md-8 offset-2">
+                <div class="col-md-8 offset-md-2">
                     <div class="card mb-4 text-center">
                         <div class="card-body">
                             {% if user.is_authenticated %}
@@ -17,9 +17,13 @@
                                 Here at CSSNN.com, you have the ability to view our list of submitted post, 
                                 reply to them in the form of a comment, or create your own original news 
                                 post to be submitted to the site. You can also edit and delete your existing 
-                                posts, as well as any comments you have made. Click <a href="">here</a> or use the button 
-                                below to view our post list.  Click <a href="">here</a> or use the button below to create 
-                                your own post. Happy browsing! </div>
+                                posts, as well as any comments you have made. Click <a href="{% url 'post_list' %}">here</a> or use the link 
+                                below to view our post list.  Click <a href="{% url 'make_post' %}">here</a> or use the link below to create 
+                                your own post. Happy browsing! 
+                            </div>
+                            <div class="mx-auto">
+                                <span class="p-1"><a href="{% url 'post_list' %}">View Posts</a></span> <span class="p-1"><a href="{% url 'make_post' %}">Create Post</a></span>
+                            </div>
                             <hr />
                             {% else %}
                             <hr />
@@ -27,11 +31,15 @@
                                 Here at CSSNN.com, you have the ability to view our list of submitted post, 
                                 reply to them in the form of a comment, or create your own original news 
                                 post to be submitted to the site. You can also edit and delete your existing 
-                                posts, as well as any comments you have made. Click <a href="">here</a> or use the button 
+                                posts, as well as any comments you have made. Click <a href="{% url 'post_list' %}">here</a> or use the link 
                                 below to view our post list.  To make posts on our site, you will need to 
-                                create an account and register. Click <a href="">here</a> or use the button 
+                                create an account and register. Click <a href="{% url 'account_signup' %}">here</a> or use the link 
                                 below to sign up, after which you will be able to create your own posts. 
-                                Happy browsing! </div>
+                                Happy browsing! 
+                            </div>
+                            <div class="mx-auto">
+                                <span class="p-1"><a href="{% url 'post_list' %}">View Posts</a></span> <span class="p-1"><a href="{% url 'account_signup' %}">Register</a></span>
+                            </div>
                             <hr />
                             {% endif %}
                         </div>
