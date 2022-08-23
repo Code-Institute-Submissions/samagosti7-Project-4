@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm, PostForm
@@ -86,9 +87,9 @@ class MakePostView(View):
 
         return render(
             request,
-            'make_post.html',
+            "make_post.html",
             {
-                'post_form': post_form,
+                "post_form": post_form,
             }
         )
     
@@ -96,13 +97,37 @@ class MakePostView(View):
 
         post_form = PostForm(data=request.POST)
         if post_form.is_valid():
-            # post_form.instance.email = request.user.email
             post_form.instance.author = request.user
             print(dir(post_form))
             post = post_form.save()
-            # comment.post = post
             post.save()
         else:
             post_form = PostForm()
         return HttpResponseRedirect(reverse('home'))
+
+
+class DeletePostView(View):
+    def get(self, request, id):
+        queryset = Post.objects.all()
+        post = get_object_or_404(queryset, id=id)
+        return render(
+            request, 
+            "delete_post.html",
+            {
+                "post": post,
+            }
+        )
+    
+    def post(selt, request, id):
+        queryset = Post.objects.all()
+        post = get_object_or_404(queryset, id=id)
+
+        post.delete()
+        messages.add_message(
+            request,
+            messages.SUCCESS,
+            'Post deleted.'
+        )
+        return HttpResponseRedirect(reverse('post_list'))
+
     
