@@ -108,6 +108,50 @@ class MakePostView(View):
         return HttpResponseRedirect(reverse('home'))
 
 
+class EditPostView(View):
+    def get(self, request, id):
+        queryset = Post.objects.all()
+        post = get_object_or_404(queryset, id=id)
+
+        data = {'title': post.title, 'content': post.content}
+        edit_form = PostForm(initial=data)
+
+        return render(
+            request,
+            "edit_post.html",
+            {
+                "post": post,
+                "edit_form": edit_form
+            }
+        )
+    
+    def post(self, request, id):
+        queryset = Post.objects.all()
+        post = get_object_or_404(queryset, id=id)
+
+        edit_form = PostForm(instance=post, data=request.POST)
+
+        if edit_form.is_valid():
+            post.title = edit_form.cleaned_data.get('title')
+            post.content = edit_form.cleaned_data.get('content')
+            post.slug = slugify(edit_form.cleaned_data.get('title'))
+            post.save()
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Post Edited.'
+            )
+        else:
+            edit_form = PostForm()
+            messages.add_message(
+                request,
+                messages.WARNING,
+                'Edit failed, try again'
+            )
+
+        return HttpResponseRedirect(reverse('post_list'))
+
+
 class DeletePostView(View):
     def get(self, request, id):
         queryset = Post.objects.all()
