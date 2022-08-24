@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+{% if request.user == question.author %}
+
+<div class="container-fluid my-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 pt-3">
+            <div class="card card-body pb-0">
+                <div>
+                    Edit Question
+                </div>
+                <form method="POST" action="{% url 'edit_post' post.id %}">
+                    {{ edit_form | crispy }}
+                    {% csrf_token %}
+                    <div>
+                        <button type="submit" class="btn btn-secondary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

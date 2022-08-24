@@ -2,7 +2,8 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Post
+from django.utils.text import slugify
+from .models import Post  # Comment
 from .forms import CommentForm, PostForm
 
 
@@ -99,6 +100,7 @@ class MakePostView(View):
         if post_form.is_valid():
             post_form.instance.author = request.user
             print(dir(post_form))
+            post_form.instance.slug = slugify(post_form.instance.title)
             post = post_form.save()
             post.save()
         else:
@@ -111,14 +113,14 @@ class DeletePostView(View):
         queryset = Post.objects.all()
         post = get_object_or_404(queryset, id=id)
         return render(
-            request, 
+            request,
             "delete_post.html",
             {
                 "post": post,
             }
         )
     
-    def post(selt, request, id):
+    def post(self, request, id):
         queryset = Post.objects.all()
         post = get_object_or_404(queryset, id=id)
 
