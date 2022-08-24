@@ -4,12 +4,12 @@
 
 {% load crispy_forms_tags %}
 
-{% if request.user == question.author %}
+{% if request.user == post.author %}
 
-<div class="container-fluid my-4">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-6 offset-md-3 pt-3">
-            <div class="card card-body pb-0">
+        <div class="col-md-6">
+            <div class="card card-body">
                 <div>
                     Edit Question
                 </div>
@@ -25,4 +25,6 @@
     </div>
 </div>
 
-{% endblock %}
+{% endif %}
+
+{% endblock %} 

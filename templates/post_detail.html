@@ -54,6 +54,9 @@
                     </div>
                     {% if request.user == post.author %}
                     <div>
+                        <a class="btn btn-secondary" href="{% url 'edit_post' post.id %}">Edit Post</a>
+                    </div>
+                    <div>
                         <a class="btn btn-secondary" href="{% url 'delete_post' post.id %}">Delete Post</a>
                     </div>
                     {% endif %}
