@@ -4,25 +4,25 @@
 
 {% load crispy_forms_tags %}
 
-<!-- {% if request.user == comment.author %} -->
-
+<!-- Wrapper for delete comment confirmation -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6 mx-auto">
+            <!-- Card containing the confirmation message -->
             <div class="card card-body">
+                <!-- Comment deletion form -->
                 <form method="POST" action="{% url 'delete_comment' comment.id %}">
                     {% csrf_token %}
                     <h1>Delete this comment?</h1>
+                    <!-- Deletion confirmation and rejection buttons -->
                     <h3 class="container-fluid mx-auto">
-                        <button type="submit" class="btn btn-secondary btn-lg m-3">Yes</button>
-                        <a class="btn btn-secondary btn-lg m-3" href="{% url 'post_detail' comment.post.slug %}">No</a>
+                        <button type="submit" class="btn btn-secondary btn-lg m-3" aria-label="Delete comment">Yes</button>
+                        <a class="btn btn-secondary btn-lg m-3" href="{% url 'post_detail' comment.post.slug %}" aria-label="Don't delete comment">No</a>
                     </h3>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-<!-- {% endif %} -->
 
 {% endblock %}

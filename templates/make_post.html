@@ -6,24 +6,24 @@
 
 {% if user.is_authenticated %}
 
+<!-- Wrapper for post creation form -->
 <div class="container-fluid">
     <div class="row g-0 m-3">
         <div class="col-md-6 masthead-text offset-md-3">
+            <!-- Card containing post creation form -->
             <div class="card card-body">
-
                 <h3 class="mb-3">Add your own news article!</h3>
-
-                <!-- Question form -->
+                <!-- Post creation form -->
                 <form method="POST" action="{% url 'make_post' %}">
                     {{ post_form | crispy }}
                     {% csrf_token %}
 
+                    <!-- Post creation confirmation and cancellation -->
                     <div class="text-center my-4">
-                        <button type="submit" class="btn btn--secondary text-white">Submit</button>
-                        <a class="btn btn--secondary mx-1 text-white" href="{% url 'home' %}">Cancel</a>
+                        <button type="submit" class="btn btn--secondary text-white" aria-label="Submit">Submit</button>
+                        <a class="btn btn--secondary mx-1 text-white" href="{% url 'home' %}" aria-label="Cancel">Cancel</a>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
@@ -31,12 +31,11 @@
 
 {% else %}
 
+<!-- Unregistered user blurb -->
 <div class="container">
     <div class="row g-0">
         <div class="col-md-6 masthead-text">
-
             <h3 class="mb-3">Gotta sign in to make a post! Sign in from the homepage.</h3>
-
         </div>
     </div>
 </div>

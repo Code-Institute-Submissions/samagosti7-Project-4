@@ -1,11 +1,11 @@
-# Restaurant Booking System
+# CSSNN Technology News Site
 
 ## Introduction
 Fourth project intro and CRUD
 
 A live website can be found [here](deployed heroku link).
 
-![website preview](post_lost preview picture)
+![website preview](post_list preview picture)
 
 # Table of Contents
 
@@ -18,14 +18,13 @@ A live website can be found [here](deployed heroku link).
             -   [Strategy Table](#strategy-table)
     -   [1.2. Structure](#structure)
     -   [1.3. Skeleton](#skeleton)
-    -   [1.4. Surface](#surface)
 -   [2. Features](#features)
 -   [3. Technologies Used](#technologies-used)
 -   [4. Testing](#testing)
 -   [5. Development Cycle](#development-cycle)
 -   [6. Deployment](#deployment)
 -   [7. End Product](#end-product)
--   [8. Known Bugs](#known-bugs)
+-   [8. Bugs](#bugs)
 -   [9. Credits](#credits)
 
 <a name="ux"></a>
@@ -34,9 +33,7 @@ A live website can be found [here](deployed heroku link).
 
 [Go to the top](#table-of-contents)
 
-As a big foodie, I have always enjoyed going out to different restaurants to try new cuisines. The simplest way is to book a table at a restaurant. The booking system is best when it's simple to use and asks for the necessary information.
-
-This project will showcase simplicity and ease to booking a table, update a booking, cancel a booking, create a personal profile and update a profile.
+Inspiration
 
 <a name="strategy"></a>
 
@@ -45,36 +42,28 @@ This project will showcase simplicity and ease to booking a table, update a book
 [Go to the top](#table-of-contents)
 
 ### Project Goals
-The main goal of this project is to allow the user to sign up, sign in/out, create/update a user profile and create/update/delete a table booking in a simple and effective process.
+Main site goal
 
 ### User Stories:
-First Time Visitor Goals
--   As a first-time visitor, I want to book a table at my chosen date and time.
--   As a first-time visitor, I want to view the menu for the restaurant, so that I can decide to book a table or not.
--   As a first-time visitor, I want to be able to get the contact details of the restaurant with ease.
-
-Returning Visitor Goals
--   As a Returning Visitor, I want to update my booking details.
--   As a Returning Visitor, I want to cancel a booking I have already made.
--   As a Returning Visitor, I want to edit my profile for any future bookings.
-
-Frequent User Goals
--   As a Frequent User, I want to check to see if there are any new food items on the menu.
+First Time User:
+- 
+Registered User:
+- 
+Admin:
+- 
 
 ### User Expectations:
-The system should have a simple user interface, with the navigation to each section clear and concise.
+Main expectations
 
--   The menu is clear to read.
--   The user interface is easy to navigate.
--   The website is responsive on all devices.
--   To have the ability to contact the restaurant for any enquiries.
+-   Specific expectations
 
-### User Stories
-Throughout the project I used the GitHub projects board to log all user stories as my project management tool. This helped me keep focus on the necesarry tasks as I would move them to the "in progress lane" as I'm working on the story. I would then move them to the "done" lane once the story has been completed.
+### Project Management
+Github projects board
 
-![user_story_board](documentation_assets/images/project_board.png)
+![user_story_board](story board pic)
 
 ### Strategy Table
+examine if this is necessary
 Opportunity/Problem/Feature| Importance| Viability/Feasibility
 ------------ | -------------------------|---------
 Display a food Menu | 5 | 5
@@ -91,25 +80,13 @@ Avoid double bookings | 4 | 1
 Total | 45 | 39
 
 ## Scope
-As I am unable to include all of the features from the strategy table. I will phase this project in multiple phases. Phase 1 will be what I have identified as a minimum viable product. Please find below the plans I have for each phase.
+Following agile principles, the deployed initial version offers the core of the base functionality the site can provide.  However, 
 
-### Phase 1
-- Display a food menu
-- Allow users to register for an account
-- Allow users to create and edit a personal profile
-- Responsive design
-- Contact form
-- Ability to create a booking
-- Ability to update a booking
-- Ability to cancel a booking
+### Current Functionality
+- Current Functionality
 
 ### Phase 2
-- Multiple table occupancies
-- Avoid double bookings
-- Contact form model, so messages are saved to the database
-- Email confirmation when a message has been received.
-- Account email verification
-- Replace django-crispy forms with HTML forms for easier control of validation and styling
+- Possible future functionality
 
 <a name="structure"></a>
 
@@ -117,7 +94,7 @@ As I am unable to include all of the features from the strategy table. I will ph
 
 [Go to the top](#table-of-contents)
 
-It is really important to include responsive design in this project as many users are using different devices (mobile, tablet, laptop/PC). This gives the user the best experience on their device.
+Site is responsive
 
 - Responsive on all device sizes
 - Easy navigation through labelled buttons
@@ -125,8 +102,9 @@ It is really important to include responsive design in this project as many user
 - All elements will be consistent including font size, font family, colour scheme.
 
 ### Database Model
+check if this is necessary
 Planned database structure:
-![database_model](documentation_assets/images/database_model.png)
+![database_model](planned model pic)
 
 Final database structure:
 
@@ -205,24 +183,6 @@ From left to right edit profile > manage bookings mobile:
 From left to right resgister > navigation bar when user is logged in mobile:
 ![register_login_logged-in-navbar_mobile](documentation_assets/wireframes/register_login_logged-in-navbar.png)
 
-<a name="surface"></a>
-
-## 1.4. Surface
-
-[Go to the top](#table-of-contents)
-
-### Colours
-
-Please find the colours schemes that I used [here](https://coolors.co/bd3c31-000000-ffffff-212529).
-
-### Typography
-
-I decided to use Be Vietnam Pro as my font of choice with sans serif as my backup font for browsers that might not support Be Vietnam Pro.
-
-The link to the font can be found [here](https://fonts.google.com/share?selection.family=Be%20Vietnam%20Pro).
-
-<a name="features"></a>
-
 # 2. Features
 
 [Go to the top](#table-of-contents)
@@ -263,40 +223,16 @@ The link to the font can be found [here](https://fonts.google.com/share?selectio
 - A book now button that directs the user to create a booking page. If the user has not logged in it will prompt the user to register or log in first.
 - A short introduction to describe the restaurant.
 
-### Create Profile Page
-- Once the user has registered they will be redirected to the create profile page. The page displays a form for the user to enter their first name, last name and telephone number.
 
-### Edit Profile Page
-- The user can navigate to this page by clicking on the edit profile link in the navigation bar. This page will display the current profile details with a form below for the user to update any details.
-
-### Menu Page
-- The restaurant opening times are displayed at the top of the page.
-- A menu that is displayed in 3 sections by the food category.
-
-### Contact Page
-- An information section that displays the restaurant telephone number, email address, opening times and address.
-- A contact form that requires the user to enter their full name, email address and a message. The form is already pre-filled with the user's full name (if the user is logged in and has created a profile).
-- A Google maps iframe of the restaurant location.
-
-### Create Booking Page
-- A form that requires the user to enter/select the booking details.
-Full name and contact telephone number are prefilled if the user has created a profile.
-The user will then need to select a date, time, number of guests and enter any allergy information if needed.
-- The date input field has JavaScript code so the default value is today's date and the user cannot select a date that is previous to today.
-- When clicking the make reservation button the booking will then be requested to the restaurant owner for approval.
-- As the restaurant is only open from 2 PM, if the user selects a time before that, the form will display an error, prompting the customer to select a later time.
+### Make Post Page
+- 
 ![booking_time_error](documentation_assets/images/booking_time_error.png)
 
-### Manage Booking Page
-- Displays all user-related bookings in a list view within a card.
-- Each card will show a booking reference, booking status, booking date, booking time, guest count. It will also contain a button to change booking details and a cancel booking button.
+### Edit Post Page
+- 
 
-### Edit Booking Page
-- This page will display the current booking details with a form below for the user to update any details.
-- When the changes are submitted, the booking will be processed as the booking requested status.
-
-### Cancel Booking
-- When the user clicks the cancel booking button they will be redirected to a confirmation page.
+### Delete Post
+- 
 
 <a name="technologies-used"></a>
 
@@ -322,10 +258,10 @@ The user will then need to select a date, time, number of guests and enter any a
     -   The project uses Chrome to debug and test the source code using HTML5.
 -   [Balsamiq](https://balsamiq.com/)
     -   Balsamiq was used to create the wireframes during the design process.
--   [Google Fonts](https://fonts.google.com/)
-    -   Google fonts were used to import the "Be Vietnam Pro" font into the style.css file which is used on all pages throughout the project.
 -   [GitHub](https://github.com/)
     -   GitHub was used to store the project's code after being pushed from Git.
+- Heroku
+    - Heroku was used
 
 <a name="testing"></a>
 
@@ -333,67 +269,48 @@ The user will then need to select a date, time, number of guests and enter any a
 
 [Go to the top](#table-of-contents)
 
-### Google Developer Tools
-For every element that I added to my HTML, I would add the basic CSS to my stylesheet. I would then use the inspect element to try different styles. Once I've got it to my liking I would try to see if I can implement the styling with bootstrap, if I could not replicate the styling I would copy the CSS from google and paste it into my CSS stylesheet. This allows me to keep track of the code I am using.
-
-I also checked the accessibility of the page using lighthouse.
-![google_lighthouse](documentation_assets/images/google_lighthouse.png)
-
-### Responsive Tools
-I used [Am I Responsive](http://ami.responsivedesign.is) to make sure that all my pages are responsive to all devices.
+### Chrome Developer Tools
+Used Chrome dev tools to test styling and responsivity.
 
 ### W3C Validator Tools
 #### HTML:
-I used [W3C Markup](https://validator.w3.org/#validate_by_input+with_options) to check for any errors within the HTML pages.
+I used [W3C Markup](https://validator.w3.org/#validate_by_input+with_options) to check for any html errors.
 
-I had an error on the base.html template:
-![base.html_error](documentation_assets/images/base.html_error.png)
+I had an error on the following templates:
+![base.html_error](error pics)
 
-This was then rectified by adding the lang attribute to the current HTML tag and deleting the other one.
-![base.html_fix](documentation_assets/images/base.html_fix.png)
+I fixed them like this:
+![base.html_fix](fix pics)
 
-I had an error on the contact.html template:
-![contact.html_error](documentation_assets/images/contact.html_error.png)
-
-This was then rectified by removing the width styling of 100% and replacing it with a class="w-100".
-![contact.html_fix](documentation_assets/images/contact.html_fix.png)
 
 #### CSS:
-I used [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) to check for any errors within my CSS stylesheet.
+I used [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) to check for any errors in my CSS stylesheet.
 
 I had no errors in my CSS file:
 ![css_validation](documentation_assets/images/css_validation.png)
 
 ### JavaScript:
-I used [JS Hint](https://jshint.com/) to check for any errors within my JavaScript script tags. JS Hint showed warnings on line 1 which was missing a semicolon, however as this was for the script tag I have ignored it. This piece of JavaScript was along copied and pasted from an external source therefore, I have not made any changes to the code.
+I used [JS Hint](https://jshint.com/) to check for any errors within my JavaScript script tags. 
 
 I had no errors in my JavaScript files:
 ![javascript_validation](documentation_assets/images/javascript_validation.png)
 
 ### Python:
-I used [PEP8 online](http://pep8online.com/) to check for any errors within my Python files. The validator showed multiple "line too long" errors. This was rectified by adding each statement as a new line.
+I used [PEP8 online](http://pep8online.com/) to check for any errors in my Python files. 
 
-urls.py errors:
-![urls_errors](documentation_assets/images/urls_errors.png)
+ errors:
+![urls_errors](error pics)
 
-Fixed urls.py validation:
-![urls_fixed_errors](documentation_assets/images/urls_fixed_errors.png)
+Fixed:
+![urls_fixed_errors](fixed pics)
 
-There were also "line too long" errors within my settings.py file but I have chosen to ignore these as this is a very important file.
+There were also "line too long" errors within my env.os file but I have chosen to ignore these as any attempts to edit them blew up the entire site.
 
-settings.py errors:
-![settings_errors](documentation_assets/images/settings_errors.png)
 
 ## Manual Testing
-I have tested my site on Safari and google chrome on multiple devices.
+I have tested my site on Safari and google chrome, which are the mediums available to me at this time. 
 
-These include:
--   iPhone X
--   iPhone XS Max
--   iPad Pro
--   MacBook Pro
-
-Please find below my testing process for all pages via mobile and web:
+Manual testing results are detailed below. 
 
 ### Navigation Bar
 
@@ -672,15 +589,15 @@ Sign Out Page:
 
 ![sign_out_mobile_preview](documentation_assets/images/sign_out_mobile_preview.png)
 
-<a name="known-bugs"></a>
+<a name="bugs"></a>
 
-# 8. Known Bugs
+# 8. Bugs
 
 [Go to the top](#table-of-contents)
 
 - There is a * next to the labels in the form submissions for creating a new post and editing a post.  That is not designed and I couldn't figure out a way to remove it. 
 
-- Some forms for this project is built by using the django-crispy-forms libraries therefore, some of the fields do not contain all the validation rules as I cannot target the individual inputs. For example on the edit profile form, I have add the validation rule so that the user can only enter a number, however I couldnt not figure out a way to add a min and max length value.
+- 
 
 <a name="credits"></a>
 
@@ -705,8 +622,3 @@ Sign Out Page:
 -   The Chinese food image on the menu page came from [Google Images](tinyurl.com/68hzut9u).
 
 -   The Chinese food image on the menu page came from [Google Maps](https://www.maps.ie/create-google-map/).
-
-### Project Acknowledgements
-- Code Institue Tutor Support - For directing me to the correct solutions for any bugs.
-
-- My Mentor - For his constructive criticism and always pushing me to go further to develop my skills.

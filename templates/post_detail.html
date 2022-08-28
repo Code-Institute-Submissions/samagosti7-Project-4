@@ -4,13 +4,16 @@
 
 {% load crispy_forms_tags %}
 
+<!-- Wrapper for post intro -->
 <div class="masthead">
     <div class="container">
         <div class="row">
+            <!-- Div containing the post. CREDIT--skeleton of post_detail structure taken from https://learn.codeinstitute.net/ -->
             <div class="col-md-6 masthead-text">
                 <h1 class="post-title">{{ post.title }}</h1>
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
             </div>
+            <!-- Associated post image -->
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="https://res.cloudinary.com/sagos/image/upload/v1661695989/code_bkg_eeqiub.jpg" width="100%" alt="Blue monitor background with code">
@@ -22,17 +25,19 @@
     </div>
 </div>
 
+<!-- Wrapper for post -->
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
+                <!-- Post content -->
                 <p class="card-text ">
                     {{ post.content | safe }}
                 </p>
                 <div class="row">
-
                     <div class="col-1">
                         <strong>
+                            <!-- Like functionality if user is registered -->
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
@@ -45,15 +50,18 @@
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
+                        <!-- Like counter -->
                         <span class="text-secondary">{{ post.number_of_likes }} </span>
                         </strong>
                     </div>
+                    <!-- Comment counter -->
                     <div class="col-1">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
+                    <!-- Edit and delete options if user is author -->
                     {% if request.user == post.author %}
                     <div class="container-fluid mx-auto">
                         <div>
@@ -78,20 +86,25 @@
             <hr>
         </div>
     </div>
+    <!-- Wrapper for comments -->
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
             <h3>Comments:</h3>
+            <!-- Card containing comments -->
             <div class="card-body">
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
+                    <!-- Comment metadata -->
                     <p class="font-weight-bold">
                         {{ comment.name }}
                         <span class=" text-muted font-weight-normal">
                             {{ comment.created_on }}
                         </span> wrote:
                     </p>
+                    <!-- Comment content -->
                     {{ comment.body | linebreaks }}
                 </div>
+                <!-- Delete functinoality if user is author of comment -->
                 {% if request.user == comment.author %}
                 <div>
                     <a class ="btn btn-secondary" href="{% url 'delete_comment' comment.id %}" aria-label="Delete Comment">
@@ -102,20 +115,24 @@
                 {% endfor %}
             </div>
         </div>
+        <!-- Wrapper for comment form -->
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
+                <!-- Alert if already commented by user -->
                 {% if commented %}
                 <div class="alert alert-info" role="alert">
                     You already have comments on this post.
                 </div>
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
+                <!-- Comment form if already commented-->
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-signup btn-lg m-3">Submit</button>
                 </form>
                 {% else %}
+                <!-- Comment form if not already commented -->
                 {% if user.is_authenticated %}
 
                 <h3>Leave a comment:</h3>
@@ -126,6 +143,7 @@
                     <button type="submit" class="btn btn-signup btn-lg m-3">Submit</button>
                 </form>
                 {% else %}
+                <!-- Blurb indicating necessity to register to comment -->
                 <h4>Sign in to make your own comments.</h4>
                 {% endif %}
                 {% endif %}

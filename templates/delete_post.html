@@ -4,20 +4,24 @@
 
 {% load crispy_forms_tags %}
 
-
+<!-- Wrapper for delete post confirmation -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-10 mx-auto">
+            <!-- Card containing confirmation message -->
             <div class="card card-body">
+                <!-- Post deletion form -->
                 <form method="POST" action="{% url 'delete_post' post.id %}">
                     {% csrf_token %}
                     <h2 class="mx-auto text-center">Are you sure you want to delete this post?</h2>
+                    <!-- Respecifying post to be deleted -->
                     <div  class="mx-auto text-center">
                         <h5>Title:</h5> <h6>"{{ post.title }}"</h6> <h5>Created On:</h5> <h6>{{ post.created_on }}</h6>
                     </div>
+                    <!-- Deletion confirmation and rejection buttons -->
                         <div class="mx-auto text-center">
-                            <button type="submit" class="btn btn-secondary btn-lg m-3">Yes</button>
-                            <a href="{% url 'post_list' %}" class="btn btn-secondary btn-lg m-3">No</a>
+                            <button type="submit" class="btn btn-secondary btn-lg m-3" aria-label="Delete post">Yes</button>
+                            <a href="{% url 'post_list' %}" class="btn btn-secondary btn-lg m-3" aria-label="Don't delete post">No</a>
                         </div>
                 </form>
             </div>

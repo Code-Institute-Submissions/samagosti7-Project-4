@@ -2,16 +2,19 @@
 
 {% block content %}
 
+<!-- Wrapper for welcome message -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-3 left">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
+                    <!-- Card containing welcome message -->
                     <div class="card mb-4 text-center">
                         <div class="card-body">
                             {% if user.is_authenticated %}
                             <h3>Welcome</h3>
                             <hr />
+                            <!-- Registered user welcome message -->
                             <div class="mx-auto p-3 lead"> Hello and welcome to CSSNN, your home for code related news, updates, and 
                                 conversations. Here at CSSNN.com, you can view our list of submitted posts, 
                                 reply to them in the form of a comment, or create your own original news 
@@ -21,12 +24,13 @@
                                 or use the button below to create your own post. Happy browsing! 
                             </div>
                             <div class="mx-auto">
-                                <span class="p-1"><a class="btn btn-secondary btn-lg" href="{% url 'post_list' %}">View Posts</a></span> <span class="p-1"><a class="btn btn-secondary btn-lg" href="{% url 'make_post' %}">Create Post</a></span>
+                                <span class="p-1"><a class="btn btn-secondary btn-lg" href="{% url 'post_list' %}" aria-label="View posts">View Posts</a></span> <span class="p-1"><a class="btn btn-secondary btn-lg" href="{% url 'make_post' %}" aria-label="Create post">Create Post</a></span>
                             </div>
                             <hr />
                             {% else %}
                             <h3>Welcome</h3>
                             <hr />
+                            <!-- Unregistered user welcome message -->
                             <div class="mx-auto p-3 lead"> Hello and welcome to CSSNN, your home for code related news, updates, 
                                 and conversations. Here at CSSNN.com, as an unregistered user you can view
                                 our list of submitted posts, and view the conversation about shared posts in
@@ -39,7 +43,7 @@
                                 posts and comments. Happy browsing! 
                             </div>
                             <div class="mx-auto">
-                                <span class="p-1"><a class="btn btn-secondary btn-lg" href="{% url 'post_list' %}">View Posts</a></span> <span class="p-1"><a class="btn btn-secondary btn-lg" href="{% url 'account_signup' %}">Register</a></span>
+                                <span class="p-1"><a class="btn btn-secondary btn-lg" href="{% url 'post_list' %}" aria-label="View posts">View Posts</a></span> <span class="p-1"><a class="btn btn-secondary btn-lg" href="{% url 'account_signup' %}" aria-label="Register">Register</a></span>
                             </div>
                             <hr />
                             {% endif %}
@@ -49,6 +53,7 @@
             </div>
         </div>
     </div>
+    <!-- Pagiation statement. CREDIT--pagination code taken from https://learn.codeinstitute.net/ -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
