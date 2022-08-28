@@ -1,5 +1,6 @@
 {% load static %}
 
+<!-- Boilerplate html and requisite bootstrap references  -->
 <!DOCTYPE html>
 <html class="h-100">
 
@@ -90,17 +91,19 @@
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
         <p class="m-0 text-center text-white">Made by Samuel Agosti</p>
-        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i></p>
+        <p class="m-0 text-center text-white">Follow us: 
+            <a href="https://www.facebook.com" class="text-white" target="blank"><i class="fab fa-facebook-square ms-3"></i></a>
+            <a href="https://www.twitter.com" class="text-white" target="blank"><i class="fab fa-twitter-square ms-3"></i></a>
+            <a href="https://www.instagram.com" class="text-white" target="blank"><i class="fab fa-instagram-square ms-3"></i></a>
+            <a href="https://www.youtube.com" class="text-white" target="blank"><i class="fab fa-youtube-square ms-3"></i></a>
+            <a href="https://www.linkedin.com" class="text-white" target="blank"><i class="fab fa-linkedin-in ms-3"></i></p></a>
     </footer>
     <script>
         setTimeout(function () {
             let messages = document.getElementById('msg');
             let alert = new bootstrap.Alert(messages);
             alert.close();
-        }, 2500);
+        }, 3000);
     </script>
 </body>
 
