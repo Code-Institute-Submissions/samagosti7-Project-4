@@ -4,11 +4,10 @@
 
 {% load crispy_forms_tags %}
 
-{% if request.user == post.author}
+<!-- {% if request.user == post.author} -->
 
 <div class="container-fluid">
     <div class="row">
-
         <div class="col-12 mt-3 left">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
@@ -24,8 +23,8 @@
                                     {{ post.title }}
                                 </div>
                                 <div>
-                                    <button type="submit" class="btn btn-main">Yes</button>
-                                    <a href="{% url 'home' %}">No</a>
+                                    <button type="submit" class="btn btn-secondary">Yes</button>
+                                    <a href="{% url 'post_list' %}">No</a>
                                 </div>
                             </form>
                         </div>

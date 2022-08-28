@@ -6,13 +6,12 @@
 
 <div class="masthead">
     <div class="container">
-        <div class="row g-0">
+        <div class="row">
             <div class="col-md-6 masthead-text">
                 <h1 class="post-title">{{ post.title }}</h1>
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
                 {% else %}
@@ -56,11 +55,11 @@
                         {% endwith %}
                     </div>
                     {% if request.user == post.author %}
-                    <div>
-                        <a class="btn btn-secondary" href="{% url 'edit_post' post.id %}">Edit Post</a>
-                    </div>
-                    <div>
-                        <a class="btn btn-secondary" href="{% url 'delete_post' post.id %}">Delete Post</a>
+                    <div class="container-fluid mx-auto">
+                        <div>
+                            <a class="btn btn-secondary m-3" href="{% url 'edit_post' post.id %}">Edit Post</a>
+                            <a class="btn btn-secondary m-3" href="{% url 'delete_post' post.id %}">Delete Post</a>
+                        </div>
                     </div>
                     {% endif %}
                 </div>
@@ -110,8 +109,10 @@
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    <button type="submit" class="btn btn-signup btn-lg m-3">Submit</button>
                 </form>
+                {% else %}
+                <h4>Sign in to make your own comments.</h4>
                 {% endif %}
                 {% endif %}
             </div>
