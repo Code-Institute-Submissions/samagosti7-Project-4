@@ -17,11 +17,11 @@
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                    src="https://res.cloudinary.com/sagos/image/upload/v1661695989/code_bkg_eeqiub.jpg" alt="Blue monitor background with code">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.featured.image.url }}">
                                 {% endif %}
-                                <div class="image-flash">
+                                <div class="image-flash ">
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
                             </div>
