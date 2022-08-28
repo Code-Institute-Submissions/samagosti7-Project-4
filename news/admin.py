@@ -6,6 +6,11 @@ from django.contrib import admin
 from .models import Post, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
+"""
+        CREDIT--admin functionality for posts coming from blog lesson on
+        https://learn.codeinstitute.net/
+    """
+
 
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):

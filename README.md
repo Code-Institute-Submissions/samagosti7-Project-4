@@ -1,7 +1,9 @@
 # CSSNN Technology News Site
 
 ## Introduction
-Fourth project intro and CRUD
+For my fourth milestone project, I chose to build a reddit style news site, as recommended by the portfolio preparation module and using the "I think therefore I blog" module as a basic skeleton. 
+
+This project includes the CRUD (create, read, update, delete) functionality--the user can create original content, read the content of others, and update/delete their own content on the site.  
 
 A live website can be found [here](deployed heroku link).
 
@@ -33,7 +35,7 @@ A live website can be found [here](deployed heroku link).
 
 [Go to the top](#table-of-contents)
 
-Inspiration
+I have been a longtime user of reddit, and immediately upon seeing the "reddit style news site" suggestion I was interested in how creating such a thing could be done.  While theoretically the site I have made could be used to post about any topic, I chose to narrow it down to being code specific, as would be more realistic for a new site. The name "CSSNN" follows, a play on words for the emergence of a new news network dedicated to programming spefically. 
 
 <a name="strategy"></a>
 
@@ -42,15 +44,25 @@ Inspiration
 [Go to the top](#table-of-contents)
 
 ### Project Goals
-Main site goal
+The overarching goal of the site is to give users the ability to create original posts and upload them to the site, thereby creating a collaborative space in which to view and contribute to news in the tech landscape.  
 
 ### User Stories:
-First Time User:
-- 
-Registered User:
-- 
-Admin:
-- 
+##### All Site User:
+- As a site user, I want to be able to go to the main site and read a welcome message orienting me around the site. 
+- As an site user, I want to be able to view an ordered list of existing posts. 
+- As an site user, I want to be able to click on a specific post to read that post in its entirety. 
+- As an site user, I want to be able to view existing comments so I can view the conversation about a speficic post. 
+- As an unregistered user, I want to be able to register an account with the site. 
+##### Registered User:
+- As a registered user who isn't signed in, I want to be able to sign in. 
+- As a registered user who is signed in, I want to be able to sign out. 
+- As a registered user, I want to be able to create my own news post and upload it to the site. 
+- As a registered user, I want to be able to add a comment and submit it to contribute to the discussion of a particular post.  
+- As a registered user, I want to be able to delete posts I have created. 
+- As a registered user, I want to be able to edit posts I have published. 
+- As a registered user, I want to be able to delete comments I have made. 
+
+
 
 ### User Expectations:
 Main expectations
@@ -317,16 +329,15 @@ Manual testing results are detailed below.
 All Pages:
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
-Home page | When clicking the "home" button in the navigation bar, the browser redirects me to the home page. The is active styling will appear as the home button has a red background. | PASS
-Menu page | When clicking the "menu" button in the navigation bar, the browser redirects me to the menu page. The is active styling will appear as the menu button has a red background. | PASS
-Contact page | When clicking the "contact" button in the navigation bar, the browser redirects me to the contact page. The is active styling will appear as the contact button has a red background. | PASS
-Book now page | When clicking the "book now" button in the navigation bar, the browser redirects me to the book now page. The is active styling will appear as the book now button has a red background.| PASS
-Manage booking page | When clicking the "manage bookings" button in the navigation bar, the browser redirects me to the manage booking page. The user will know they are on this page by the heading. | PASS
-Edit profile page | Checked foreground information is not distracted by backgrounds| PASS
-Register page | When clicking the "register" button in the navigation bar, the browser redirects me to the register page. The user will know they are on this page by the heading. | PASS
-Login / Logout page | When clicking the "login" or "logout button in the navigation bar, the browser redirects me to the login or logout page. The user will know they are on this page by the heading. | PASS
-Foreground & background colour | Checked foreground information is not distracted by background animation. | PASS
+Home page | When clicking the "home" link in the navigation bar, the browser redirects me to the home page. | PASS
+Logo | When clicking the logo in the navigation bar, the browser redirects me to the home page. | PASS
+View Posts page | When clicking the "View Posts" link in the navigation bar, the browser redirects me to the post list page. | PASS
+Create a Post page | If signed in, when clicking the "Create a Post" link in the navigation bar, the browser redirects me to the post creation page. | PASS
+Register page | If not signed in, when clicking the "register" button in the navigation bar, the browser redirects me to the registration page. | PASS
+Login page | When clicking the "login" link in the navigation bar, the browser redirects me to the login page. | PASS
+Logout page | When clicking the "logout" link in the navigation bar, the browser redirects me to the logout page. | PASS
 Text | Checked that all fonts and colours used are consistent. | PASS
+Authorization | Checked that users only get the create post option when signed in, and only get the register option when not signed in. Also checked that they only get the logout option when logged in, and the login option when logged out. | Pass
 
 ### Footer
 TEST            | OUTCOME                          | PASS / FAIL  
@@ -334,8 +345,10 @@ TEST            | OUTCOME                          | PASS / FAIL
 Facebook | When clicking the Facebook icon, a new tab opens and redirects to the Facebook website. | PASS
 Twitter | When clicking the Twitter icon, a new tab opens and redirects to the Twitter website. | PASS
 Instagram | When clicking the Instagram icon, a new tab opens and redirects to the Instagram website. | PASS
+Youtube | When clicking the Youtube icon, a new tab opens and redirects to the Youtube website. | PASS
+LinkedIn | When clicking the LinkedIn icon, a new tab opens and redirects to the LinkedIn website. | PASS
 
-### Home page
+### Landing page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
@@ -608,17 +621,7 @@ Sign Out Page:
 ### Code
 -   The navigation bar came from [Bootstrap](https://getbootstrap.com/docs/5.0/components/navbar).
 
-- The JavaScript code to set the online booking form to default to the current date came from [Stack Overflow](https://stackoverflow.com/questions/6982692/how-to-set-input-type-dates-default-value-to-today).
-
-- The JavaScript code to disable any previous dates on the online booking form came from [Demo2s](https://www.demo2s.com/javascript/javascript-input-date-input-type-date-disable-dates-before-today.html).
+- 
 
 ### Content
--   The restaurant logo came from [Adobe Creative Cloud Express logo maker](https://www.adobe.com/express/create/logo).
-
--   The dragon image from the home page came from [PNGItem](https://www.pngitem.com/middle/wRmbRx_red-dragon-png-red-chinese-dragon-png-transparent/).
-
--   The banner image from the home page came from [PNGItem](https://pngtree.com/freebackground/chinese-food-pasta-simple-white-banner_1059420.html).
-
--   The Chinese food image on the menu page came from [Google Images](tinyurl.com/68hzut9u).
-
--   The Chinese food image on the menu page came from [Google Maps](https://www.maps.ie/create-google-map/).
+-   

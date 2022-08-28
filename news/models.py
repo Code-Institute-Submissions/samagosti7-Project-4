@@ -8,6 +8,11 @@ from cloudinary.models import CloudinaryField
 # Assigning status definitions
 STATUS = ((0, "Draft"), (1, "Published"))
 
+"""
+        CREDIT--model skeletons used from https://learn.codeinstitute.net/, in
+        a mini project covering blog posts.
+        """
+
 
 class Post(models.Model):
     """
@@ -36,7 +41,7 @@ class Post(models.Model):
 
     def number_of_likes(self):
         """
-        Functino returning the number of likes on a post
+        Function returning the number of likes on a post
         """
         return self.likes.count()
 
