@@ -1,16 +1,15 @@
 from .models import Comment, Post
 from django import forms
-from django_summernote.widgets import SummernoteWidget
 
-
+# Form for comment submission
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('body',)
+        labels = {'body': ""}
 
-
-class PostForm(forms.ModelForm):
 # Form for post submission
+class PostForm(forms.ModelForm):
     class Meta: 
         model = Post
         fields = ['title', 'content']
