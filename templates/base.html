@@ -58,7 +58,11 @@
 
                 </ul>
                 <span class="navbar-text text-muted">
-                    program your own news for a change
+                    {% if user.is_authenticated %}
+                    signed in as {{ user.username }}
+                    {% else %}       
+                    you are not signed in!
+                    {% endif %}
                 </span>
             </div>
         </div>
