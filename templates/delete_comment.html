@@ -8,15 +8,15 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 mx-auto">
             <div class="card card-body">
                 <form method="POST" action="{% url 'delete_comment' comment.id %}">
                     {% csrf_token %}
-                    <div>Delete Comment?</div>
-                    <div>
-                        <button class="btn btn-secondary">Yes</button>
-                        <a class="btn btn-secondary" href="{url 'post_list' comment.post.slug %}">No</a>
-                    </div>
+                    <h1>Delete this comment?</h1>
+                    <h3 class="container-fluid mx-auto">
+                        <button type="submit" class="btn btn-secondary btn-lg m-3">Yes</button>
+                        <a class="btn btn-secondary btn-lg m-3" href="{% url 'post_detail' comment.post.slug %}">No</a>
+                    </h3>
                 </form>
             </div>
         </div>
