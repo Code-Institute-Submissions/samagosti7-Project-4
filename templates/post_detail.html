@@ -24,7 +24,6 @@
         </div>
     </div>
 </div>
-
 <!-- Wrapper for post -->
 <div class="container">
     <div class="row">
@@ -134,7 +133,6 @@
                 {% else %}
                 <!-- Comment form if not already commented -->
                 {% if user.is_authenticated %}
-
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
@@ -151,6 +149,4 @@
         </div>
     </div>
 </div>
-
-
 {% endblock content %}

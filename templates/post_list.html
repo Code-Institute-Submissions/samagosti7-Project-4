@@ -4,15 +4,16 @@
 
 {% load crispy_forms_tags %}
 
+<!-- Wrapper for post list -->
 <div class="container-fluid">
     <div class="row">
-
-        <!-- Blog Entries Column -->
+        <!-- Div containing the post list -->
         <div class="col-12 mt-3 left">
             <div class="row">
             {% for post in post_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
+                        <!-- Card containing an individual post -->
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
@@ -21,19 +22,23 @@
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.featured.image.url }}">
                                 {% endif %}
+                                <!-- Author credit on post -->
                                 <div class="image-flash ">
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
                             </div>
+                            <!-- Post title linking to post detail -->
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
                             <hr />
+                            <!-- Post metadata -->
                             <p class="card-text text-muted h6">{{ post.created_on }} <i class="far fa-heart"></i>{{ post.number_of_likes }}</p>
                         </div>
                     </div>
                 </div>
+            <!-- Pagination code. CREDIT--https://learn.codeinstitute.net/ -->
             {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
@@ -50,11 +55,9 @@
             {% endif %}
             {% if page_obj.has_next %}
             <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
             {% endif %}
         </ul>
     </nav>
     {% endif %}
 </div>
-
 {% endblock %}
