@@ -104,9 +104,19 @@ class MakePostView(View):
             post_form.instance.slug = slugify(post_form.instance.title)
             post = post_form.save()
             post.save()
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Post submitted successfully'
+            )
         else:
             post_form = PostForm()
-        return HttpResponseRedirect(reverse('home'))
+            messages.add_message(
+                request,
+                messages.WARNING,
+                'Something went wrong, please try again'
+            )
+        return HttpResponseRedirect(reverse('post_list'))
 
 
 class EditPostView(View):
