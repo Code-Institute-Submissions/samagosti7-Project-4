@@ -7,17 +7,17 @@
 {% if request.user == post.author %}
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6">
+    <div class="row m-3">
+        <div class="col-md-6 masthead-text offset-md-3">
             <div class="card card-body">
-                <div>
-                    Edit Question
-                </div>
+                <h3 class="mb-3">
+                    Edit Post
+                </h3>
                 <form method="POST" action="{% url 'edit_post' post.id %}">
                     {{ edit_form | crispy }}
                     {% csrf_token %}
                     <div>
-                        <button type="submit" class="btn btn-secondary">Submit</button>
+                        <button type="submit" class="btn btn-secondary m-3">Submit</button>
                     </div>
                 </form>
             </div>

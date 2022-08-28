@@ -4,32 +4,22 @@
 
 {% load crispy_forms_tags %}
 
-<!-- {% if request.user == post.author} -->
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <div class="card mb-4 text-center">
-                        <div class="card-body">
-                            <div>Delete Post?</div>
-                            <form method="POST" action="{% url 'delete_post' post.id %}">
-                                {% csrf_token %}
-                                <div>
-                                    Are you sure you want to delete this post?
-                                </div>
-                                <div>
-                                    {{ post.title }}
-                                </div>
-                                <div>
-                                    <button type="submit" class="btn btn-secondary">Yes</button>
-                                    <a href="{% url 'post_list' %}">No</a>
-                                </div>
-                            </form>
-                        </div>
+        <div class="col-md-10 mx-auto">
+            <div class="card card-body">
+                <form method="POST" action="{% url 'delete_post' post.id %}">
+                    {% csrf_token %}
+                    <h2 class="mx-auto text-center">Are you sure you want to delete this post?</h2>
+                    <div  class="mx-auto text-center">
+                        <h5>Title:</h5> <h6>"{{ post.title }}"</h6> <h5>Created On:</h5> <h6>{{ post.created_on }}</h6>
                     </div>
-                </div>
+                        <div class="mx-auto text-center">
+                            <button type="submit" class="btn btn-secondary btn-lg m-3">Yes</button>
+                            <a href="{% url 'post_list' %}" class="btn btn-secondary btn-lg m-3">No</a>
+                        </div>
+                </form>
             </div>
         </div>
     </div>
