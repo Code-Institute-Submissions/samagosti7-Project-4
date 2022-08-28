@@ -12,13 +12,13 @@
                         <div class="card-body">
                             {% if user.is_authenticated %}
                             <hr />
-                            <div> Hello and welcome to CSSNN! Your home for code related news and updates. 
-                                Here at CSSNN.com, you have the ability to view our list of submitted post, 
+                            <div> Hello and welcome to CSSNN, your home for code related news, updates, and 
+                                conversations. Here at CSSNN.com, you can view our list of submitted posts, 
                                 reply to them in the form of a comment, or create your own original news 
                                 post to be submitted to the site. You can also edit and delete your existing 
-                                posts, as well as any comments you have made. Click <a href="{% url 'post_list' %}">here</a> or use the link 
-                                below to view our post list.  Click <a href="{% url 'make_post' %}">here</a> or use the link below to create 
-                                your own post. Happy browsing! 
+                                posts, and delete any comments you have made. Click <a href="{% url 'post_list' %}">here</a> 
+                                or use the link below to view our post list.  Click <a href="{% url 'make_post' %}">here</a> 
+                                or use the link below to create your own post. Happy browsing! 
                             </div>
                             <div class="mx-auto">
                                 <span class="p-1"><a class="btn btn-secondary" href="{% url 'post_list' %}">View Posts</a></span> <span class="p-1"><a class="btn btn-secondary" href="{% url 'make_post' %}">Create Post</a></span>
@@ -26,14 +26,15 @@
                             <hr />
                             {% else %}
                             <hr />
-                            <div> Hello and welcome to CSSNN! Your home for code related news and updates. 
-                                Here at CSSNN.com, you have the ability to view our list of submitted post, 
-                                reply to them in the form of a comment, or create your own original news 
-                                post to be submitted to the site. You can also edit and delete your existing 
-                                posts, as well as any comments you have made. Click <a href="{% url 'post_list' %}">here</a> or use the link 
-                                below to view our post list.  To make posts on our site, you will need to 
-                                create an account and register. Click <a href="{% url 'account_signup' %}">here</a> or use the link 
-                                below to sign up, after which you will be able to create your own posts. 
+                            <div> Hello and welcome to CSSNN, your home for code related news, updates, 
+                                and conversations. Here at CSSNN.com, as an unregistered user you can view
+                                our list of submitted posts, and view the conversation about shared posts in
+                                the comments below. To add create your own posts or participate in the discission
+                                with your own comments, simply register an account with us! Don't worry it's
+                                completely free. You will then be able to edit and delete your existing posts,
+                                and delete any comments you have made. Click <a href="{% url 'post_list' %}">here</a> 
+                                or use the link below to view our post list. Click <a href="{% url 'account_signup' %}">here</a> 
+                                or use the link below to sign up, after which you will be able to create your own posts. 
                                 Happy browsing! 
                             </div>
                             <div class="mx-auto">

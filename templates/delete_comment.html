@@ -1,1 +1,28 @@
-hello
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<!-- {% if request.user == comment.author %} -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-body">
+                <form method="POST" action="{% url 'delete_comment' comment.id %}">
+                    {% csrf_token %}
+                    <div>Delete Comment?</div>
+                    <div>
+                        <button class="btn btn-secondary">Yes</button>
+                        <a class="btn btn-secondary" href="{url 'post_list' comment.post.slug %}">No</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- {% endif %} -->
+
+{% endblock %}

@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.utils.text import slugify
-from .models import Post  # Comment
+from .models import Post, Comment
 from .forms import CommentForm, PostForm
 
 
@@ -49,6 +49,7 @@ class PostDetail(View):
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
+            comment_form.instance.author = request.user
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
@@ -175,5 +176,31 @@ class DeletePostView(View):
             'Post deleted.'
         )
         return HttpResponseRedirect(reverse('post_list'))
+
+class DeleteCommentView(View):
+    def get(self, request, id):
+        queryset = Comment.objects.all()
+        comment = get_object_or_404(queryset, id=id)
+        return render(
+            request,
+            "delete_comment.html",
+            {
+                "comment": comment,
+            }
+        )
+    
+    def post(self, request, id):
+        queryset = Comment.objects.all()
+        comment = get_object_or_404(queryset, id=id)
+        slug = comment.post.slug
+
+        comment.delete()
+        messages.add_message(
+            request,
+            messages.SUCCESS,
+            'Comment deleted.'
+        )
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
 
     
