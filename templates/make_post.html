@@ -6,10 +6,10 @@
 
 {% if user.is_authenticated %}
 
-<div class="container">
-    <div class="row g-0">
+<div class="container-fluid">
+    <div class="row g-0 m-3">
         <div class="col-md-6 masthead-text offset-md-3">
-            <div class="card card-body pb-0">
+            <div class="card card-body">
 
                 <h3 class="mb-3">Add your own news article!</h3>
 
@@ -19,8 +19,8 @@
                     {% csrf_token %}
 
                     <div class="text-center my-4">
-                        <button type="submit" class="btn btn--main">Submit</button>
-                        <a class="btn btn--secondary mx-1" href="{% url 'home' %}">Cancel</a>
+                        <button type="submit" class="btn btn--secondary text-white">Submit</button>
+                        <a class="btn btn--secondary mx-1 text-white" href="{% url 'home' %}">Cancel</a>
                     </div>
                 </form>
 
