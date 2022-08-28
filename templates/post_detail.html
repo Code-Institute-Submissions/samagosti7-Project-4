@@ -98,9 +98,16 @@
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 {% if commented %}
-                <div class="alert alert-success" role="alert">
-                    Your comment has been submitted!
+                <div class="alert alert-info" role="alert">
+                    You already have comments on this post.
                 </div>
+                <h3>Leave a comment:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-signup btn-lg m-3">Submit</button>
+                </form>
                 {% else %}
                 {% if user.is_authenticated %}
 

@@ -53,8 +53,18 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                'Comment submitted successfully'
+            )
         else:
             comment_form = CommentForm()
+            messages.add_message(
+                request,
+                messages.WARNING,
+                'Something went wrong. Please try again.'
+            )
 
         return render(
             request,
