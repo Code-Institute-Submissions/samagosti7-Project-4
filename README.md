@@ -5,7 +5,7 @@ For my fourth milestone project, I chose to build a reddit style news site, as r
 
 This project includes the CRUD (create, read, update, delete) functionality--the user can create original content, read the content of others, and update/delete their own content on the site.  
 
-A live website can be found [here](deployed heroku link).
+A live website can be found [here](https://sagos-project-4.herokuapp.com/).
 
 ![website preview](post_list preview picture)
 
@@ -455,8 +455,7 @@ I used the terminal to deploy my project locally. To do this I had to:
 4. Open the local host port on my web browser
 
 For the final deployment to Heroku, I had to:
-1. Uncomment the PostgreSQL databse from my settings.py file.
-2. Set debug = False in my settings.py file.
+1. Set debug = False in my settings.py file.
 3. Commit and push all files to GitHub
 3. In Heroku, remove the DISABLE_COLLECTSTATIC config var.
 4. In the deploy tab, go to the manual deploy sections and click deploy branch.
@@ -508,6 +507,7 @@ Delete Comment Page:
 
 - There is a * next to the labels in the form submissions for creating a new post and editing a post.  That is not designed and I couldn't figure out a way to remove it. 
 - There are several "problems" listed in the views.py file. But fixing those problems has historically led me to many more hours of far worse problems, so for the current ones I am leaving as is.
+- Much of the styling as presented when running manage.py runserver is not present in the deployed version. I could not reconcile these two, but the deployed version functions well enough, just missing some styling pieces which improved aesthetics.
 
 <a name="credits"></a>
 

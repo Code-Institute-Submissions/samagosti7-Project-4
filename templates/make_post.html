@@ -19,8 +19,8 @@
                     {% csrf_token %}
                     <!-- Post creation confirmation and cancellation -->
                     <div class="text-center my-4">
-                        <button type="submit" class="btn btn--secondary text-white" aria-label="Submit">Submit</button>
-                        <a class="btn btn--secondary mx-1 text-white" href="{% url 'home' %}" aria-label="Cancel">Cancel</a>
+                        <button type="submit" class="btn btn-warning" aria-label="Submit">Submit</button>
+                        <a class="btn btn-warning mx-1" href="{% url 'home' %}" aria-label="Cancel">Cancel</a>
                     </div>
                 </form>
             </div>
