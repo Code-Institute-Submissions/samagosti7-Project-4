@@ -138,19 +138,24 @@ Following agile principles, this deployed initial version offers all core of the
 ### Wire-frames
 The following wireframes offered the initial skeletal idea, upon which the site was built further. 
 
-Landing Page:
+- Landing Page:
+
 ![home_page_wf](assets/wireframes/home_page_wf.png)
 
-Post List:
+- Post List:
+
 ![post_list_wf](assets/wireframes/post_list_wf.png)
 
-Post Detail:
+- Post Detail:
+
 ![post_detail_wf](assets/wireframes/post_detail_wf.png)
 
-Create New Post:
+- Create New Post:
+
 ![new_post_wf](assets/wireframes/new_post_wf.png)
 
-Edit/Delete Post:
+- Edit/Delete Post:
+
 ![edit_post_wf](assets/wireframes/edit_post_wf.png)
 
 # 2. Features
@@ -443,39 +448,55 @@ For the final deployment to Heroku, I had to:
 # 6. End Product
 
 [Go to the top](#table-of-contents)
+- The following are taken from the deployed heroku site. 
 
-Home Page:
-![home_page_desktop](documentation_assets/images/homepage_desktop_preview.png)
+- - Home Page:
 
-Post List Page:
-![post_list](documentation_assets/images/menu_desktop_preview.png)
+![home_page](assets/final_product/home_page.png)
 
-Post Detail Page:
-![post_detail](documentation_assets/images/contact_deskop_preview.png)
+- - Post List Page:
 
-Register Page:
-![register](documentation_assets/images/booking_desktop_preview.png)
+![home_page](assets/final_product/post_list.png)
 
-Login Page:
-![login](documentation_assets/images/manage_booking_desktop_preview.png)
+- - Post Detail Page-Unregistered:
 
-Logout Page:
-![logout](documentation_assets/images/edit_booking_desktop_preview.png)
+![post_list](assets/final_product/post_detail1.png)
 
-Make Post Page:
-![make_post](documentation_assets/images/edit_profile_desktop_preview.png)
+- - Post Detail Page-Registered and Author
 
-Edit Post Page:
-![edit_post](documentation_assets/images/register_desktop_preview.png)
+![post_list](assets/final_product/post_detail2.png)
 
-Delete Post Page:
-![delete_post](documentation_assets/images/sign_in_desktop_preview.png)
+- - Register Page:
 
-Comment Form:
-![comment_form](documentation_assets/images/sign_out_desktop_preview.png)
+![register](assets/final_product/register.png)
 
-Delete Comment Page:
-![delete_comment](documentation_assets/images/sign_out_desktop_preview.png)
+- - Login Page:
+
+![login](assets/final_product/login.png)
+
+- - Logout Page:
+
+![logout](assets/final_product/logout.png)
+
+- - Make Post Page:
+
+![make_post](assets/final_product/make_post.png)
+
+- - Edit Post Page:
+
+![edit_post](assets/final_product/edit_post.png)
+
+- - Delete Post Page:
+
+![delete_post](assets/final_product/delete_post.png)
+
+- - Comment Form:
+
+![comment_form](assets/final_product/comment_form.png)
+
+- - Delete Comment Page:
+
+![delete_comment](assets/final_product/delete_comment.png)
 
 <a name="bugs"></a>
 
