@@ -7,7 +7,7 @@ This project includes the CRUD (create, read, update, delete) functionality--the
 
 A live website can be found [here](https://sagos-project-4.herokuapp.com/).
 
-![website preview](post_list preview picture)
+![website_preview]()
 
 # Table of Contents
 
@@ -69,7 +69,7 @@ The user should be able to navigate the site efficiently, without any bugs or st
 ### Project Management
 I used GitHub projects and specifically the projects board to manage existing issues and user stories. When I was ready to work on a user story, I would move it to the in progress section from the todo section. When complete, I would move it to the done section. 
 
-![user_story_board](story board pic)
+![user_stories_board](story board pic)
 
 ### Strategy Table
 Feature| Importance| Viability/Feasibility
@@ -110,9 +110,7 @@ Following agile principles, this deployed initial version offers all core of the
 
 [Go to the top](#table-of-contents)
 
-### Database Model
-Database structure:
-![database_model](planned model pic)
+### Database Models
 
 ### Post Model
 - title: Post title decided by user. 
@@ -141,19 +139,19 @@ Database structure:
 The following wireframes offered the initial skeletal idea, upon which the site was built further. 
 
 Landing Page:
-![home_page_desktop](landing page )
+![home_page_wf](landing page )
 
 Post List:
-![menu_page_desktop](post list)
+![post_list_wf](post list)
 
 Post Detail:
-![register_page_desktop](documentation_assets/wireframes/register_desktop.png)
+![post_detail_wf](documentation_assets/wireframes/register_desktop.png)
 
 Create New Post:
-![login_page_desktop](documentation_assets/wireframes/login_desktop.png)
+![new_post_wf](documentation_assets/wireframes/login_desktop.png)
 
 Edit/Delete Post:
-![user_logged_in_desktop](documentation_assets/wireframes/user_logged_in_desktop.png)
+![edit_post_wf](documentation_assets/wireframes/user_logged_in_desktop.png)
 
 # 2. Features
 
@@ -161,10 +159,6 @@ Edit/Delete Post:
 
 ### Base
 - The navigation bar is placed at the top of all pages. The navigation bar is dynamic in that meaning depending on if the user is logged in or not the options will change.
-- Authenticated User Navbar:
-![user_logged_in](documentation_assets/images/navbar_not_logged_in.png)
-- Unauthenticated User Navbar:
-![user_notlogged_in](documentation_assets/images/navbar_logged_in.png)
 - The footer is placed at the bottom of each page with social media icons. 
 - The site logo is also placed at the top of all pages. Clicking on it will also direct the user to the home page.
 - The top right of all pages indicates the users sigin status to them, and displays their username if logged in. 
@@ -172,16 +166,13 @@ Edit/Delete Post:
 ### Register Page
 - A simple signup form that requires the user to enter a unique email address and a password. The password must be entered again for confirmation, this must match the already entered password above.
 - If the user enters information that already associated with an existing account, the user is prompted by an error message.
-![username_duplicate_error](username error pic)
 - If the user enters both passwords that do not match, the user is prompted by a message.
-![password_match_error](username error pic)
 - Once the user has successfully signed up, this will automatically log in and lead the user back to the main site.
 
 ### Login Page
 - A login form that requires the user to enter their email address and password that they used when signing up to the site.
 - A line informing the user that if an account has not been created they can click the signup hyperlink to be redirected to the signup page.
 - If the user enters in the wrong credentials, a message is displayed to the user.
-![signup_validation_error](signup error)
 
 ### Logout Page
 - When clicking logout from the navigation bar, the user is redirected to a sign-out page to confirm their action.
@@ -207,7 +198,6 @@ Edit/Delete Post:
 - Comment form next to comment section, allowing a registered user to add a comment. 
 - Delete button under a submitted comment if the user is the author. 
 - Error message if comment form is submitted blank.
-[image]pic of error message blank comment
 
 ### Make Post Page
 - Card presenting form in which a registered user can create a new post.
@@ -217,7 +207,6 @@ Edit/Delete Post:
 - Cancel button taking user back to post list
 - Post creation fail if there is already a post with the same title. 
 - Error message if either title or content field is left blank
-[image]pic of empty field message
 
 ### Edit Post Page
 - Card presenting form in which a registered user can edit their selected post.
@@ -317,7 +306,6 @@ Fixed:
 ![urls_fixed_errors](fixed pics)
 
 There were also "line too long" errors within my env.os file but I have chosen to ignore these as any attempts to edit them blew up the entire site.
-
 
 ## Manual Testing
 I have tested my site on Safari and google chrome, which are the mediums available to me at this time. 
@@ -456,9 +444,8 @@ I used the terminal to deploy my project locally. To do this I had to:
 
 For the final deployment to Heroku, I had to:
 1. Set debug = False in my settings.py file.
-3. Commit and push all files to GitHub
-3. In Heroku, remove the DISABLE_COLLECTSTATIC config var.
-4. In the deploy tab, go to the manual deploy sections and click deploy branch.
+2. Commit and push all files to GitHub
+3. In the deploy tab, go to the manual deploy sections and click deploy branch.
 
 <a name="end-product"></a>
 
@@ -467,37 +454,37 @@ For the final deployment to Heroku, I had to:
 [Go to the top](#table-of-contents)
 
 Home Page:
-![home_page_desktop_preview](documentation_assets/images/homepage_desktop_preview.png)
+![home_page_desktop](documentation_assets/images/homepage_desktop_preview.png)
 
 Post List Page:
-![post_list_preview](documentation_assets/images/menu_desktop_preview.png)
+![post_list](documentation_assets/images/menu_desktop_preview.png)
 
 Post Detail Page:
-![contact_desktop_preview](documentation_assets/images/contact_deskop_preview.png)
+![post_detail](documentation_assets/images/contact_deskop_preview.png)
 
 Register Page:
-![booking_desktop_preview](documentation_assets/images/booking_desktop_preview.png)
+![register](documentation_assets/images/booking_desktop_preview.png)
 
 Login Page:
-![manage_booking_desktop_preview](documentation_assets/images/manage_booking_desktop_preview.png)
+![login](documentation_assets/images/manage_booking_desktop_preview.png)
 
 Logout Page:
-![edit_booking_desktop_preview](documentation_assets/images/edit_booking_desktop_preview.png)
+![logout](documentation_assets/images/edit_booking_desktop_preview.png)
 
 Make Post Page:
-![edit_profile_desktop_preview](documentation_assets/images/edit_profile_desktop_preview.png)
+![make_post](documentation_assets/images/edit_profile_desktop_preview.png)
 
 Edit Post Page:
-![register_desktop_preview](documentation_assets/images/register_desktop_preview.png)
+![edit_post](documentation_assets/images/register_desktop_preview.png)
 
 Delete Post Page:
-![sign_in_desktop_preview](documentation_assets/images/sign_in_desktop_preview.png)
+![delete_post](documentation_assets/images/sign_in_desktop_preview.png)
 
 Comment Form:
-![sign_out_desktop_preview](documentation_assets/images/sign_out_desktop_preview.png)
+![comment_form](documentation_assets/images/sign_out_desktop_preview.png)
 
 Delete Comment Page:
-![sign_out_desktop_preview](documentation_assets/images/sign_out_desktop_preview.png)
+![delete_comment](documentation_assets/images/sign_out_desktop_preview.png)
 
 <a name="bugs"></a>
 
@@ -507,7 +494,8 @@ Delete Comment Page:
 
 - There is a * next to the labels in the form submissions for creating a new post and editing a post.  That is not designed and I couldn't figure out a way to remove it. 
 - There are several "problems" listed in the views.py file. But fixing those problems has historically led me to many more hours of far worse problems, so for the current ones I am leaving as is.
-- Much of the styling as presented when running manage.py runserver is not present in the deployed version. I could not reconcile these two, but the deployed version functions well enough, just missing some styling pieces which improved aesthetics.
+- Much of the styling as presented when running manage.py runserver is not present in the deployed version. I could not reconcile these two, but the deployed version functions well enough, just missing some styling pieces which improved aesthetics. I did however have to emergency change the button type for submitting a post, so the deployed app didn't have white text against a white background. 
+- README navigation not functioning as intended.
 
 <a name="credits"></a>
 
@@ -522,5 +510,4 @@ I used the "I Think Therefore I Blog" module as an effective skeleton for my sit
 -   Inspiration for a form based approach to making new posts and editing existing posts taken from https://github.com/josswe26/code-buddy
 -   README skeleton copied from a supplied project my my code institute mentor. While almost all contained information was tailored to my own project, certain pieces retained accuracy across the two. Take for example the "technologies used" section.  It follows that I used the exact same technologies as the student whose README structure I followed, so that section remains largely the same. Credit to https://github.com/iKelvvv/MS4/, who made an excellent README.
 
-
-Special thanks to mentor Marcel for efficient and remarkably pinpoint accurate advice, as always. 
+Special thanks to mentor Marcel for efficient and remarkably helpful advice, as always. 

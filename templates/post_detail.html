@@ -34,7 +34,7 @@
                     {{ post.content | safe }}
                 </p>
                 <div class="row">
-                    <div class="col-1">
+                    <div class="col-1 m-2">
                         <strong>
                             <!-- Like functionality if user is registered -->
                             {% if user.is_authenticated %}
@@ -54,7 +54,7 @@
                         </strong>
                     </div>
                     <!-- Comment counter -->
-                    <div class="col-1">
+                    <div class="col-1 m-2">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
                             {{ total_comments }}</strong>
@@ -103,7 +103,7 @@
                     <!-- Comment content -->
                     {{ comment.body | linebreaks }}
                 </div>
-                <!-- Delete functinoality if user is author of comment -->
+                <!-- Delete functionality if user is author of comment -->
                 {% if request.user == comment.author %}
                 <div>
                     <a class ="btn btn-secondary" href="{% url 'delete_comment' comment.id %}" aria-label="Delete Comment">
