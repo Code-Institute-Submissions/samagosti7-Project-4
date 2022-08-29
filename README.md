@@ -178,24 +178,48 @@ Edit/Delete Post:
 - A short and well legible blurb informing the user of the purpose of the site, and offering links to view posts/create a post if registered, or view posts/register if unregistered. 
 
 ### Post List Page
-- 
+- All posts listed, one after the other, ordered by date created. Listed is author, time created, a small cover picture, and the title of the post, which is a link to the post detail view. 
+- If so many posts that there needs to be pages, pagination happens automatically with scrolling capability. 
+- Small heart displaying the number of likes for each post. 
+- Small text bubble displaying the number of comments for each post. 
 
 ### Post Detail Page
-- 
+- Title, author, and creation date of post listed in masthead next to masthead image. 
+- Full content of post displayed under masthead. 
+- Interactable heart displaying number of likes. Clicking the heart toggles like/unlike for the viewing user, if registered. 
+- Small text bubble dispalying number of comments. 
+- Edit/Delete post buttons displayed under content if user is author of post. 
+- Back to Posts button dispalyed under post content for all users. 
+- Comment section ordered by date created. 
+- Comment form next to comment section, allowing a registered user to add a comment. 
+- Delete button under a submitted comment if the user is the author. 
+- Error message if comment form is submitted blank.
+[image]pic of error message blank comment
 
 ### Make Post Page
-- 
-pic of empty field message
+- Card presenting form in which a registered user can create a new post.
+- Title input section labeled "Title"
+- Content input section labeled "Post Content"
+- Submit button submitting new post
+- Cancel button taking user back to post list
+- Error message if either title or content field is left blank
+[image]pic of empty field message
 
 ### Edit Post Page
-- 
-pic of empty field message
+- Card presenting form in which a registered user can edit their selected post.
+- Title input section labeled "Title" with prefilled data of post to be edited
+- Content input section labeled "Post Content" with prefilled data of post to be edited
+- Submit button taking user back to post list. 
+- Same error message as above if either title or content field is left blank
 
 ### Delete Post Page
-- 
+- Large banner message confirming if user wants to delete post
+- "Title" and "Created On" sections reminding user which post they have selected for deletion. 
+- Yes and No buttons, taking user to updated post list page based on choice. 
 
 ### Delete Comment Page
-- 
+- Large banner message confirming if user wants to delete comment. 
+- - Yes and No buttons, taking user to updated post detail page based on choice.
 
 ## Possible New Future Features
 - look between table and kanban
@@ -249,7 +273,6 @@ I had an error on the following templates:
 
 I fixed them like this:
 ![base.html_fix](fix pics)
-
 
 #### CSS:
 I used [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) to check for any errors in my CSS stylesheet.
@@ -307,114 +330,74 @@ LinkedIn | When clicking the LinkedIn icon, a new tab opens and redirects to the
 ### Landing page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
-Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
+View Posts links | Check that clicking any of the four "view posts" links redirects the user to the post list page. | PASS
+Make a Post links | Check that clicking any of the two "create a post" links redirect the user to the post creation page. | PASS
+Register links | Check that clicking any of the two "register" links redirects the user to the registration page. | PASS
 
-![index_google_lighthouse](documentation_assets/images/index_google_lighthouse.png)
-
-### Menu page
+### Post List page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
-Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
-Responsiveness | Check every element on-page for consistent scalability in mobile, tablet and desktop view.| PASS
-Book now button | When clicking the book now button on the page, the browser redirects to the booking page. | PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
+Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
 
-![menu_google_lighthouse](documentation_assets/images/menu_google_lighthouse.png)
-
-### Contact page
+### Post Detail page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
-Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
-Responsiveness | Check every element on-page for consistent scalability in mobile, tablet and desktop view.| PASS
-Book now button | When clicking the book now button on the page, the browser redirects to the booking page. | PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
-Contact Form | Checked the form submits only when all fields are filled out. | PASS
+Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
 
-![contact_google_lighthouse](documentation_assets/images/contact_google_lighthouse.png)
-
-### Booking page
+### Make a Post
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
-Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
-Responsiveness | Check every element on-page for consistent scalability in mobile, tablet and desktop view.| PASS
-Book now button | When clicking the book now button on the page, the browser redirects to the booking page. | PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
-Booking Form | Checked the form submits only when all required fields are filled out. | PASS
-If not signed in | Checked to see if the user has not signed in the booking form should not show and a message displays prompting the user to signup/sign-in first. | PASS
+Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
 
-![booking_google_lighthouse](documentation_assets/images/booking_google_lighthouse.png)
-
-### Edit booking page
+### Edit Post page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
-Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
-Responsiveness | Check every element on-page for consistent scalability in mobile, tablet and desktop view.| PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
-Edit Booking Form | Checked the form submits only when all required fields are filled out. | PASS
-Form validation | Checked that the telephone number input only allows number input and not any text | PASS
+Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
 
-![edit_booking_google_lighthouse](documentation_assets/images/edit_booking_google_lighthouse.png)
-
-### Manage booking page
+### Delete Post page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
-Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
-Responsiveness | Check every element on-page for consistent scalability in mobile, tablet and desktop view.| PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
-Edit booking button | Checked that the button redirects to the edit booking page with the correct booking instance. | PASS
-Cancel booking button | Checked that the button redirects to the cancel booking page with the correct booking instance. | PASS
+Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
 
-![manage_booking_google_lighthouse](documentation_assets/images/manage_booking_google_lighthouse.png)
-
-### Create profile page
+### Delete Comment page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
-Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
-Responsiveness | Check every element on-page for consistent scalability in mobile, tablet and desktop view.| PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
-Create profile form | Checked the form submits only when all required fields are filled out. | PASS
-If the profile has not been created | Checked to see if the user has created a profile, if not it will redirect the user to the create profile page | PASS
-Form validation | Checked that the telephone number input only allows number input and not any text | PASS
+Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
 
-![create_profile_validation](documentation_assets/images/create_profile_input_validation.png)
-![create_profile_google_lighthouse](documentation_assets/images/create_profile_google_lighthouse.png)
-
-
-### Edit profile page
+### Logout Confirmation page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
-Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
-Responsiveness | Check every element on-page for consistent scalability in mobile, tablet and desktop view.| PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
-Edit profile form | Checked the form submits only when all required fields are filled out. | PASS
-Form validation | Checked that the telephone number input only allows number input and not any text | PASS
-If the profile has not been created | Checked to see if the user has created a profile, if not it will redirect the user to the create profile page | PASS
-
-![edit_profile_google_lighthouse](documentation_assets/images/edit_profile_google_lighthouse.png)
+Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
 
 ### Register page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
+Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
 Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
-Responsiveness | Check every element on-page for consistent scalability in mobile, tablet and desktop view.| PASS
 Accessibility | Checked the accessibility of the page using lighthouse| PASS
 Register form | Checked the form submits only when all required fields are filled out. | PASS
 Sign in link | Checked the sign-in link redirects to the sign-in page. | PASS
 
-![signup_google_lighthouse](documentation_assets/images/sign_up_google_lighthouse.png)
-
 ### Sign in page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
+Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
 Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
-Responsiveness | Check every element on-page for consistent scalability in mobile, tablet and desktop view.| PASS
 Accessibility | Checked the accessibility of the page using lighthouse| PASS
 Sign in form | Checked the form submits only when all required fields are filled out. | PASS
 Signup link | Checked the signup link redirects to the signup page. | PASS
 
-![sign_in_google_lighthouse](documentation_assets/images/sign_in_google_lighthouse.png)
+### Messages
+TEST            | OUTCOME                          | PASS / FAIL  
+--------------- | -------------------------------- | ---------------
+Responsiveness | Check if messages appear with sensible styling across all device sizes.| PASS
+Sign in | Check if sign in message displays on sign in | PASS
+Sign in | Check if sign in message displays on sign in | PASS
+Sign in | Check if sign in message displays on sign in | PASS
+Sign in | Check if sign in message displays on sign in | PASS
+Sign in | Check if sign in message displays on sign in | PASS
+Sign in | Check if sign in message displays on sign in | PASS
 
 <a name="deployment"></a>
 
@@ -437,7 +420,7 @@ For the final deployment to Heroku, I had to:
 
 <a name="end-product"></a>
 
-# .6 End Product
+# 6. End Product
 
 [Go to the top](#table-of-contents)
 
