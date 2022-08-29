@@ -120,7 +120,8 @@ class PostLike(View):
 
 class MakePostView(View):
     """
-        View for the html page and form presented when a user begins post creation
+        View for the html page and form presented when a user begins post
+        creation
     """
 
     def get(self, request):
@@ -262,7 +263,8 @@ class DeletePostView(View):
 
 class DeleteCommentView(View):
     """
-        View for the html page displayed when a user chooses to delete a comment
+        View for the html page displayed when a user chooses to delete a
+        comment
     """
 
     def get(self, request, id):

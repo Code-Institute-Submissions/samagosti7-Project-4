@@ -18,7 +18,7 @@
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="https://res.cloudinary.com/sagos/image/upload/v1661695989/code_bkg_eeqiub.jpg" width="100%" alt="Blue monitor background with code">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
+                <img src=" {{ post.featured_image.url }}" width="100%" alt="featured image">
                 {% endif %}
             </div>
         </div>

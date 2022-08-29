@@ -7,7 +7,7 @@ This project includes the CRUD (create, read, update, delete) functionality--the
 
 A live website can be found [here](https://sagos-project-4.herokuapp.com/).
 
-![website_preview]()
+![website_preview](assets/images/website_preview.png)
 
 # Table of Contents
 
@@ -69,7 +69,7 @@ The user should be able to navigate the site efficiently, without any bugs or st
 ### Project Management
 I used GitHub projects and specifically the projects board to manage existing issues and user stories. When I was ready to work on a user story, I would move it to the in progress section from the todo section. When complete, I would move it to the done section. 
 
-![user_stories_board](story board pic)
+![user_stories_board](assets/images/user_stories_board.png)
 
 ### Strategy Table
 Feature| Importance| Viability/Feasibility
@@ -139,19 +139,19 @@ Following agile principles, this deployed initial version offers all core of the
 The following wireframes offered the initial skeletal idea, upon which the site was built further. 
 
 Landing Page:
-![home_page_wf](landing page )
+![home_page_wf](assets/wireframes/home_page_wf.png)
 
 Post List:
-![post_list_wf](post list)
+![post_list_wf](assets/wireframes/post_list_wf.png)
 
 Post Detail:
-![post_detail_wf](documentation_assets/wireframes/register_desktop.png)
+![post_detail_wf](assets/wireframes/post_detail_wf.png)
 
 Create New Post:
-![new_post_wf](documentation_assets/wireframes/login_desktop.png)
+![new_post_wf](assets/wireframes/new_post_wf.png)
 
 Edit/Delete Post:
-![edit_post_wf](documentation_assets/wireframes/user_logged_in_desktop.png)
+![edit_post_wf](assets/wireframes/edit_post_wf.png)
 
 # 2. Features
 
@@ -278,34 +278,25 @@ Chrome developer tools were used to test styling and responsivity, across variou
 #### HTML:
 I used [W3C Markup](https://validator.w3.org/#validate_by_input+with_options) to check for any html errors.
 
-I had an error on the following templates:
-![base.html_error](error pics)
-
-I fixed them like this:
-![base.html_fix](fix pics)
+I received the following set of errors or similar errors on each template. Best I can tell the validator is not equipped to handle django markup conventions. Aside from these no errors were presented.
+![django_markup_error](assets/images/django_markup_error.png)
 
 #### CSS:
-I used [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) to check for any errors in my CSS stylesheet.
+I used [Jigsaw](https://jigsaw.w3.org/css-validator/) to check for any errors in my CSS stylesheet.
 
 I had no errors in my CSS file:
-![css_validation](documentation_assets/images/css_validation.png)
-
-### JavaScript:
-I used [JS Hint](https://jshint.com/) to check for any errors within my JavaScript script tags. 
-
-I had no errors in my JavaScript files:
-![javascript_validation](documentation_assets/images/javascript_validation.png)
+![css_success_validation](assets/images/css_success_validation.png)
 
 ### Python:
 I used [PEP8 online](http://pep8online.com/) to check for any errors in my Python files. 
 
- errors:
-![urls_errors](error pics)
+It presented me with 2 "line too long" errors in views.py. The errror message was as follows.
+![python_error_validation](assets/images/python_error_validation.png)
 
-Fixed:
-![urls_fixed_errors](fixed pics)
+When fixed, I got this message, same as on all the other .py files.
+![python_success_validation](assets/images/python_success_validation.png)
 
-There were also "line too long" errors within my env.os file but I have chosen to ignore these as any attempts to edit them blew up the entire site.
+There were also "line too long" errors within my env.os file but I have chosen to ignore these as any attempts to edit them blew up the site.
 
 ## Manual Testing
 I have tested my site on Safari and google chrome, which are the mediums available to me at this time. 
