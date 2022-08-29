@@ -88,6 +88,8 @@ Search through existing posts | 2 | 2
 Create social profile | 2 | 1
 Filter post list order parameter | 1 | 2
 
+The above strategy table acted as a guide for me, helping me see which pieces were most necessary and most feasible as opposed to less important or less implementable pieces. 
+
 ## Scope
 Following agile principles, this deployed initial version offers all core of the base functionality the site can provide, and some additional pieces.  However, there are several features, some covered above, which could possibly be added to the site in the future to improve functionality. These are discussed later in the features section. Below is a short description of the current site functionality. 
 
@@ -113,10 +115,21 @@ Database structure:
 ![database_model](planned model pic)
 
 ### Post Model
-- 
+- title: Post title decided by user. 
+- slug: Unique slug for url distinction.
+- updated_on: Date and time set automatically upon edit. 
+- content: Content input by user. 
+- created_on: Date and time set automatically at creation.
+- status: Whether or not the post is published. Defaults to published but can be set to non published by an admin.
+- Likes: Calculated total of users who have liked the post. 
 
 ### Comment Model
-- 
+- post: Post comment will be added to. 
+- email: Email of commenting user. 
+- body: Content of comment. 
+- created_on: Date and time automatically set upon creation. 
+- approved: Approval status of comment. Defaults to true but can be changed by admin.
+- author:  Author of comment. 
 
 <a name="skeleton"></a>
 
@@ -202,6 +215,7 @@ Edit/Delete Post:
 - Content input section labeled "Post Content"
 - Submit button submitting new post
 - Cancel button taking user back to post list
+- Post creation fail if there is already a post with the same title. 
 - Error message if either title or content field is left blank
 [image]pic of empty field message
 
@@ -219,10 +233,17 @@ Edit/Delete Post:
 
 ### Delete Comment Page
 - Large banner message confirming if user wants to delete comment. 
-- - Yes and No buttons, taking user to updated post detail page based on choice.
+- Yes and No buttons, taking user to updated post detail page based on choice.
 
 ## Possible New Future Features
-- look between table and kanban
+- Ability to edit a comment.
+- Ability to view only owned posts. 
+- Ability to search through existing posts. 
+- Requirement of posts to have a unique title inside post form, rather than a post creation fail. 
+- Creation of social profile. 
+- Filtration of posts by different parameters. 
+- Ability to create posts as drafts. 
+- Ability to delete account, as a non admin. 
 
 <a name="technologies-used"></a>
 
@@ -339,65 +360,87 @@ Register links | Check that clicking any of the two "register" links redirects t
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
+Metadata | Check if all accompanying metadata is being displayed for each post | PASS
+Pagination | Check if site automatically paginates if necessary | PASS
+Sign in | Check if sign in message displays on sign in | PASS
 
 ### Post Detail page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
+Metadata | Check if all accompanying metadata is being displayed for the post in question | PASS
+Full Content | Check if full content of the post is being displayed | PASS
+Like | Check if there is togglable like heart allowing registered user to toggle their like selection for the post | PASS
+Back to Posts | Check "Back to Posts" button is working, redirecting user to the post list | PASS
+Edit/Delete | Check if the edit/delete post buttons are only displayed if the user is the author of the post, and if they are redirecting the user to the edit post and delete post pages properly. | 
+Ordering | Check if posts are being filtered by most recent | PASS
+Comments | Check if all the posts' comments are being displayed under the main content, with the comments' accompanying metadata | PASS
+Comment form | Check that comment form submits successfully if input correctly, and displays an error message if left blank | PASS
+Delete Comment | Check if the delete comment button only shows if the user is the author of teh comment, and redirects the user to the proper comment deletion page | PASS
 
 ### Make a Post
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
+Submission | Check if post submits if information is submitted correctly | PASS
+Error Message | Check if post does not submit, and error message is displayed instead, if post form is invalid. | PASS
+Cancel | Check if cancel button successfully redirects user back to post list | PASS
 
 ### Edit Post page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
+Submission | Check post edits successfully if edit form is completed. | PASS
+Error Messages | Check if proper error messages are displayed if edit form is completely incorrectly. | PASS
 
 ### Delete Post page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
+Post Identification | Check if post to be deleted is properly identified by title and creation date within post deltion page. | PASS
+Yes/No | Check if delete confirmation/rejection buttons take the user back to a post list page which refelcts their choice accordingly. | PASS
 
 ### Delete Comment page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
+Yes/No | Check if comment deletion confirmation/rejection takes user back to post detail page with comments reflected accordingly. | PASS
 
 ### Logout Confirmation page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
+Metadata | Check if confirmation of signout successfully logs out the user and redirects them to the landing page. | PASS
 
 ### Register page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
-Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
 Register form | Checked the form submits only when all required fields are filled out. | PASS
 Sign in link | Checked the sign-in link redirects to the sign-in page. | PASS
+Register user | Checked the form submitted correctly successfully registers a new user. | PASS
+
 
 ### Sign in page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
-Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
 Sign in form | Checked the form submits only when all required fields are filled out. | PASS
 Signup link | Checked the signup link redirects to the signup page. | PASS
+Sign in | Checked the form signs in a user assuming the correct information is input. | PASS
 
 ### Messages
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Responsiveness | Check if messages appear with sensible styling across all device sizes.| PASS
 Sign in | Check if sign in message displays on sign in | PASS
-Sign in | Check if sign in message displays on sign in | PASS
-Sign in | Check if sign in message displays on sign in | PASS
-Sign in | Check if sign in message displays on sign in | PASS
-Sign in | Check if sign in message displays on sign in | PASS
-Sign in | Check if sign in message displays on sign in | PASS
+Sign out | Check if sign out message displays on sign out | PASS
+Register | Check if sign in message displays on registration | PASS
+Make post | Check if success message displays on post creation | PASS
+Edit post | Check if success message displays on post edit | PASS
+Delete post | Check if success message displays on post deletion | PASS
+Make comment | Check if success message displays on comment creation | PASS
+Delete comment | Check if success message displays on comment deletion | PASS
 
 <a name="deployment"></a>
 
@@ -464,6 +507,7 @@ Delete Comment Page:
 [Go to the top](#table-of-contents)
 
 - There is a * next to the labels in the form submissions for creating a new post and editing a post.  That is not designed and I couldn't figure out a way to remove it. 
+- There are several "problems" listed in the views.py file. But fixing those problems has historically led me to many more hours of far worse problems, so for the current ones I am leaving as is.
 
 <a name="credits"></a>
 
