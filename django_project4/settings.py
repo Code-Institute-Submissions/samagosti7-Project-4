@@ -8,8 +8,10 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
+
+CREDIT--All written pieces of code here were copied directly as instructed in
+videos from https://learn.codeinstitute.net/
 """
-# Imports
 from pathlib import Path
 import os
 import dj_database_url
@@ -32,7 +34,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['sagos-project-4.herokuapp.com', 'localhost']
-
 
 # Application definition
 

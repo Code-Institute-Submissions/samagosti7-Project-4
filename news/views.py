@@ -13,7 +13,8 @@ from .forms import CommentForm, PostForm
 class PostList(generic.ListView):
     """
         View for the html page listing all available posts, with
-        pagination when necessary
+        pagination when necessary. Skeleton code from
+        https://learn.codeinstitute.net/
     """
 
     model = Post

@@ -23,11 +23,10 @@ A live website can be found [here](deployed heroku link).
 -   [2. Features](#features)
 -   [3. Technologies Used](#technologies-used)
 -   [4. Testing](#testing)
--   [5. Development Cycle](#development-cycle)
--   [6. Deployment](#deployment)
--   [7. End Product](#end-product)
--   [8. Bugs](#bugs)
--   [9. Credits](#credits)
+-   [5. Deployment](#deployment)
+-   [6. End Product](#end-product)
+-   [7. Bugs](#bugs)
+-   [8. Credits](#credits)
 
 <a name="ux"></a>
 
@@ -47,13 +46,13 @@ I have been a longtime user of reddit, and immediately upon seeing the "reddit s
 The overarching goal of the site is to give users the ability to create original posts and upload them to the site, thereby creating a collaborative space in which to view and contribute to news in the tech landscape.  
 
 ### User Stories:
-##### All Site User:
+#### All Site Users:
 - As a site user, I want to be able to go to the main site and read a welcome message orienting me around the site. 
 - As an site user, I want to be able to view an ordered list of existing posts. 
 - As an site user, I want to be able to click on a specific post to read that post in its entirety. 
 - As an site user, I want to be able to view existing comments so I can view the conversation about a speficic post. 
 - As an unregistered user, I want to be able to register an account with the site. 
-##### Registered User:
+#### Registered User:
 - As a registered user who isn't signed in, I want to be able to sign in. 
 - As a registered user who is signed in, I want to be able to sign out. 
 - As a registered user, I want to be able to create my own news post and upload it to the site. 
@@ -61,44 +60,47 @@ The overarching goal of the site is to give users the ability to create original
 - As a registered user, I want to be able to delete posts I have created. 
 - As a registered user, I want to be able to edit posts I have published. 
 - As a registered user, I want to be able to delete comments I have made. 
-
-
+#### Frequent User
+- As a frequent user, I want to be able to see a newly updated and ordered post list.  
 
 ### User Expectations:
-Main expectations
-
--   Specific expectations
+The user should be able to navigate the site efficiently, without any bugs or styling choices that present visual confusion or inconvenience.  The site should also be completely responsive across all standard device sizes. 
 
 ### Project Management
-Github projects board
+I used GitHub projects and specifically the projects board to manage existing issues and user stories. When I was ready to work on a user story, I would move it to the in progress section from the todo section. When complete, I would move it to the done section. 
 
 ![user_story_board](story board pic)
 
 ### Strategy Table
-examine if this is necessary
-Opportunity/Problem/Feature| Importance| Viability/Feasibility
+Feature| Importance| Viability/Feasibility
 ------------ | -------------------------|---------
-Display a food Menu | 5 | 5
-Account signup | 5 | 5
-User profile | 5 | 5
+Display a Welcome Page | 5 | 5
+Create a New Post | 5 | 5
+Register an Account | 5 | 5
 Responsive design | 5 | 5
-Contact form | 4 | 5
-Ability to create a booking | 5 | 4
-Ability to update a booking | 5 | 4
-Ability to cancel a booking | 3 | 4
-Multiple table occupancies | 4 | 1
-Avoid double bookings | 4 | 1
-
-Total | 45 | 39
+Ability to edit a post | 5 | 5
+Ability to delete a post | 5 | 5
+Ability to create a comment | 3 | 4
+Ability to delete a comment | 3 | 4
+Ability to edit a comment | 3 | 2
+View list of owned posts | 3 | 2
+Search through existing posts | 2 | 2
+Create social profile | 2 | 1
+Filter post list order parameter | 1 | 2
 
 ## Scope
-Following agile principles, the deployed initial version offers the core of the base functionality the site can provide.  However, 
+Following agile principles, this deployed initial version offers all core of the base functionality the site can provide, and some additional pieces.  However, there are several features, some covered above, which could possibly be added to the site in the future to improve functionality. These are discussed later in the features section. Below is a short description of the current site functionality. 
 
 ### Current Functionality
-- Current Functionality
-
-### Phase 2
-- Possible future functionality
+- Display Welcome Page
+- View Existing Post List and Comments
+- Register an Account
+- Create a New Post
+- Add a New Comment to a Post
+- Delete Existing Post (as author)
+- Edit Existing Post (as author)
+- Responsivity
+- Admin control
 
 <a name="structure"></a>
 
@@ -106,47 +108,15 @@ Following agile principles, the deployed initial version offers the core of the 
 
 [Go to the top](#table-of-contents)
 
-Site is responsive
-
-- Responsive on all device sizes
-- Easy navigation through labelled buttons
-- Footer at the bottom of the index page that links to the social media website.
-- All elements will be consistent including font size, font family, colour scheme.
-
 ### Database Model
-check if this is necessary
-Planned database structure:
+Database structure:
 ![database_model](planned model pic)
 
-Final database structure:
+### Post Model
+- 
 
-```python
-class Booking(models.Model):
-    booking_id = models.UUIDField(
-        primary_key=True, default=uuid.uuid4, editable=False)
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="user_bookings")
-    booking_date = models.DateField(auto_now=False)
-    booking_time = models.TimeField(auto_now=False)
-    booking_comments = models.TextField(max_length=200, blank=True)
-    created_on = models.DateTimeField(auto_now_add=True)
-    guest_count = models.IntegerField()
-    status = models.IntegerField(choices=STATUS, default=0)
-
-    class Meta:
-        ordering = ['-booking_date']
-
-
-class UserProfile(models.Model):
-    user = models.OneToOneField(
-        User, on_delete=models.CASCADE, primary_key=True)
-    first_name = models.CharField(max_length=150)
-    last_name = models.CharField(max_length=150)
-    phone_number = models.CharField(max_length=11)
-
-    def __str__(self):
-        return str(self.user)
-```
+### Comment Model
+- 
 
 <a name="skeleton"></a>
 
@@ -155,96 +125,80 @@ class UserProfile(models.Model):
 [Go to the top](#table-of-contents)
 
 ### Wire-frames
+The following wireframes offered the initial skeletal idea, upon which the site was built further. 
 
-Home/Landing Page Desktop:
-![home_page_desktop](documentation_assets/wireframes/home_desktop.png)
+Landing Page:
+![home_page_desktop](landing page )
 
-Menu Page Desktop:
-![menu_page_desktop](documentation_assets/wireframes/menu_desktop.png)
+Post List:
+![menu_page_desktop](post list)
 
-Register Page Desktop:
+Post Detail:
 ![register_page_desktop](documentation_assets/wireframes/register_desktop.png)
 
-Login Page Desktop:
+Create New Post:
 ![login_page_desktop](documentation_assets/wireframes/login_desktop.png)
 
-User Logged In Desktop:
+Edit/Delete Post:
 ![user_logged_in_desktop](documentation_assets/wireframes/user_logged_in_desktop.png)
-
-Online Booking Page Desktop:
-![online_booking_page_desktop](documentation_assets/wireframes/online_booking_desktop.png)
-
-Contact Page Desktop:
-![contact_page_desktop](documentation_assets/wireframes/contact_desktop.png)
-
-Edit Profile Page Desktop:
-![edit_profile_page_desktop](documentation_assets/wireframes/edit_profile_desktop.png)
-
-Manage Booking Page Desktop:
-![manage_booking_page_desktop](documentation_assets/wireframes/manage_booking_desktop.png)
-
-From left to right home > navigation bar > menu mobile:
-![home_navbar_menu_mobile](documentation_assets/wireframes/home_navbar_menu_mobile.png)
-
-From left to right online bookings > contact form part 1 > contact form part 2 mobile:
-![online-booking_contact-1_contact_2_mobile](documentation_assets/wireframes/online-booking_contact-1_contact-2.png)
-
-From left to right edit profile > manage bookings mobile:
-![edit-profile_manage-bookings_mobile](documentation_assets/wireframes/edit-profile_manage-bookings.png)
-
-From left to right resgister > navigation bar when user is logged in mobile:
-![register_login_logged-in-navbar_mobile](documentation_assets/wireframes/register_login_logged-in-navbar.png)
 
 # 2. Features
 
 [Go to the top](#table-of-contents)
 
-### All Pages
+### Base
 - The navigation bar is placed at the top of all pages. The navigation bar is dynamic in that meaning depending on if the user is logged in or not the options will change.
-- If the user is not logged in the navigation bar will look like this:
-![user_not_logged_in](documentation_assets/images/navbar_not_logged_in.png)
-- If the user is logged in the navigation bar will look like this:
-![user_logged_in](documentation_assets/images/navbar_logged_in.png)
-- The footer is placed at the bottom of each page with social media icons. When hovering over them it creates a zoom effect giving the user more of an experience. These icons will open the links in a new tab.
-
-- The restaurant logo is also placed at the top of all pages. Clicking on it will also direct the user to the home page.
-- Animated background, to give more of a user experience instead of a plain static background.
+- Authenticated User Navbar:
+![user_logged_in](documentation_assets/images/navbar_not_logged_in.png)
+- Unauthenticated User Navbar:
+![user_notlogged_in](documentation_assets/images/navbar_logged_in.png)
+- The footer is placed at the bottom of each page with social media icons. 
+- The site logo is also placed at the top of all pages. Clicking on it will also direct the user to the home page.
+- The top right of all pages indicates the users sigin status to them, and displays their username if logged in. 
 
 ### Register Page
 - A simple signup form that requires the user to enter a unique email address and a password. The password must be entered again for confirmation, this must match the already entered password above.
-- A message to prompt the user that if an account is already been created they can click the sign-in hyperlink to be redirected to the sign-in page.
-- If the user enters an email address that has already been registered, the user is prompted by an error message.
-![email_validation_error](documentation_assets/images/signup_email_validation.png)
-- If the user enters a password that is not secure, the user will be prompted by a message.
-![password_too_common](documentation_assets/images/password_too_common.png)
+- If the user enters information that already associated with an existing account, the user is prompted by an error message.
+![username_duplicate_error](username error pic)
 - If the user enters both passwords that do not match, the user is prompted by a message.
-![signup_email_validation](documentation_assets/images/signup_email_validation.png)
-- Once the user has successfully signed up, this will automatically log in and direct the user to the create profile page.
+![password_match_error](username error pic)
+- Once the user has successfully signed up, this will automatically log in and lead the user back to the main site.
 
 ### Login Page
 - A login form that requires the user to enter their email address and password that they used when signing up to the site.
-- A message to prompt the user that if an account has not been created they can click the signup hyperlink to be redirected to the signup page.
+- A line informing the user that if an account has not been created they can click the signup hyperlink to be redirected to the signup page.
 - If the user enters in the wrong credentials, a message is displayed to the user.
-![signup_email_validation](documentation_assets/images/login_validation.png)
+![signup_validation_error](signup error)
 
 ### Logout Page
 - When clicking logout from the navigation bar, the user is redirected to a sign-out page to confirm their action.
 
 ### Landing Page
-- A simple but elegant banner to give the user a sense of the restaurant.
-- A book now button that directs the user to create a booking page. If the user has not logged in it will prompt the user to register or log in first.
-- A short introduction to describe the restaurant.
+- A large welcome line
+- A short and well legible blurb informing the user of the purpose of the site, and offering links to view posts/create a post if registered, or view posts/register if unregistered. 
 
+### Post List Page
+- 
+
+### Post Detail Page
+- 
 
 ### Make Post Page
 - 
-![booking_time_error](documentation_assets/images/booking_time_error.png)
+pic of empty field message
 
 ### Edit Post Page
 - 
+pic of empty field message
 
-### Delete Post
+### Delete Post Page
 - 
+
+### Delete Comment Page
+- 
+
+## Possible New Future Features
+- look between table and kanban
 
 <a name="technologies-used"></a>
 
@@ -253,27 +207,29 @@ From left to right resgister > navigation bar when user is logged in mobile:
 [Go to the top](#table-of-contents)
 
 -   [HTML5](https://en.wikipedia.org/wiki/HTML)
-    -   The project uses HyperText Markup Language.
+    -   The project used HyperText Markup Language.
 -   [CSS3](https://en.wikipedia.org/wiki/CSS)
-    -   The project uses Cascading Style Sheets.
+    -   The project used Cascading Style Sheets.
 -   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
-    -   The project uses JavaScript.
+    -   The project used JavaScript.
 -   [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
-    -   The project uses Python.
+    -   The project used Python.
 -   [Boostrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
-    -   The project uses Bootstrap 5.
+    -   The project used Bootstrap 5.
 -   [PostgreSQL](https://www.postgresql.org/)
-    -   The project uses PostgreSQL as a database.
+    -   The project used PostgreSQL as a database.
 -   [Gitpod](https://www.gitpod.io/)
-    -   The project uses Gitpod.
+    -   The project used Gitpod and Gitpod projects.
 -   [Chrome](https://www.google.com/intl/en_uk/chrome/)
-    -   The project uses Chrome to debug and test the source code using HTML5.
+    -   The project used Chrome to debug and test.
 -   [Balsamiq](https://balsamiq.com/)
-    -   Balsamiq was used to create the wireframes during the design process.
+    -   The project used Balsamiq was used to create the wireframes.
 -   [GitHub](https://github.com/)
-    -   GitHub was used to store the project's code after being pushed from Git.
-- Heroku
-    - Heroku was used
+    -   The project pushed all code through GitHub.
+-   [Heroku](https://dashboard.heroku.com/)
+    - Heroku was used to deploy the final product.
+-   [Cloudinary](https://cloudinary.com/)
+    - Cloudinary was used to store image assets for the project.
 
 <a name="testing"></a>
 
@@ -282,7 +238,7 @@ From left to right resgister > navigation bar when user is logged in mobile:
 [Go to the top](#table-of-contents)
 
 ### Chrome Developer Tools
-Used Chrome dev tools to test styling and responsivity.
+Chrome developer tools were used to test styling and responsivity, across various device sizes. 
 
 ### W3C Validator Tools
 #### HTML:
@@ -460,81 +416,17 @@ Signup link | Checked the signup link redirects to the signup page. | PASS
 
 ![sign_in_google_lighthouse](documentation_assets/images/sign_in_google_lighthouse.png)
 
-<a name="development-cycle"></a>
-
-# 5. Development Cycle
-
-[Go to the top](#table-of-contents)
-
-## Project Checklist
-- Install Django and the supporting libraries
-    -  Install Django and Gunicorn. Gunicorn is the server I am using to run Django on Heroku.
-    - Install support libraries including psycopg2, this is used to connect the PostgreSQL database
-    - Install Cloudinary libraries, this is a host provider service that stores images
-    - Create the requirements.txt file. This includes the project's dependencies allowing us to run the project in Heroku.
-
-- Create a new, blank Django Project
-    - Create a new project
-    - Create the app
-    - Add restaurant_booking to the installed apps in settings.py
-    - Migrate all new changes to the database
-    - Run the server to test
-
-- Setup project to use Cloudinary and PostgreSQL
-    - Create new Heroku app
-        - Sign into Heroku
-        - Select New
-        - Select create new app
-        - Enter a relevant app name
-        - Select appropriate region
-        - Select the create app button
-
-    - Attach PostgreSQL database
-        - In Heroku go to resources
-        - Search for Postgres in the add-ons box
-        - Select Heroku Postgres
-        - Submit order form
-
-    - Prepare the environment and settings.py file
-        - Create env.py file
-        - Add DATABASE_URL with the Postgres URL from Heroku
-        - Add SECRET_KEY with a randomly generated key
-        - Add SECRET_KEY and generated key to the config vars in Heroku
-        - Add if statement to settings.py to prevent the production server from erroring
-        - Replace insecure key with the environment variable for the SECRET_KEY
-        - Add Heroku database as the back end
-        - Migrate changes to new database
-
-    - Get static media files stored on Cloudinary
-        - Create a Cloudinary account
-        - From the dashboard, copy the API Environment variable
-        - In the settings.py file create a new environment variable for CLOUDINARY_URL
-        - Add the CLOUDINARY_URL variable to Heroku
-        - Add a temporary config var for DISABLE_COLLECTSTATIC
-        - In settings.py add Cloudinary as an installed app
-        - Add static and media file variables
-        - Add templates directory
-        - Change DIR's key to point to TEMPALTES_DIR
-        - Add Heroku hostname to allowed hosts
-        - Create directories for media, static and templates in the project workspace
-        - Create a Procfile
-
-- Deploy new empty project to Heroku
-![initial_heroku_deployment](documentation_assets/images/initial_deployment_successful.png)
-
 <a name="deployment"></a>
 
-# 6. Deployment
+# 5. Deployment
 
 [Go to the top](#table-of-contents)
 
 I used the terminal to deploy my project locally. To do this I had to:
-1. Create a repository on GitHub.
-2. Clone the repository on your chosen source code editor (GitPod in my case) using the clone link.
-3. Open the terminal within GitPod
-4. Enter "python3 manage.py runserver into the terminal.
-5. Go to local host address on my web browser.
-6. All locally saved changes will show up here.
+1. Create a repository on GitHub
+2. Open the bash terminal within GitPod
+3. Enter "python3 manage.py runserver" into the terminal
+4. Open the local host port on my web browser
 
 For the final deployment to Heroku, I had to:
 1. Uncomment the PostgreSQL databse from my settings.py file.
@@ -543,85 +435,65 @@ For the final deployment to Heroku, I had to:
 3. In Heroku, remove the DISABLE_COLLECTSTATIC config var.
 4. In the deploy tab, go to the manual deploy sections and click deploy branch.
 
-I had an issue with the deployed site and the CSS was not showing on my screen.
-This was rectified by restarting all dynos in Heroku.
-
 <a name="end-product"></a>
 
-# 7. End Product
+# .6 End Product
 
 [Go to the top](#table-of-contents)
 
 Home Page:
 ![home_page_desktop_preview](documentation_assets/images/homepage_desktop_preview.png)
 
-![home_page_mobile_preview](documentation_assets/images/homepage_mobile_preview.png)
+Post List Page:
+![post_list_preview](documentation_assets/images/menu_desktop_preview.png)
 
-Menu Page:
-![menu_desktop_preview](documentation_assets/images/menu_desktop_preview.png)
-
-![menu_mobile_preview](documentation_assets/images/menu_mobile_preview.png)
-
-Contact Page:
+Post Detail Page:
 ![contact_desktop_preview](documentation_assets/images/contact_deskop_preview.png)
 
-![contact_mobile_preview](documentation_assets/images/contact_mobile_preview.png)
-
-Book Now Page:
+Register Page:
 ![booking_desktop_preview](documentation_assets/images/booking_desktop_preview.png)
 
-![booking_mobile_preview](documentation_assets/images/booking_mobile_preview.png)
-
-Manage Booking Page:
+Login Page:
 ![manage_booking_desktop_preview](documentation_assets/images/manage_booking_desktop_preview.png)
 
-![manage_booking_mobile_preview](documentation_assets/images/manage_booking_mobile_preview.png)
-
-Edit Booking Page:
+Logout Page:
 ![edit_booking_desktop_preview](documentation_assets/images/edit_booking_desktop_preview.png)
 
-![edit_booking_mobile_preview](documentation_assets/images/edit_booking_mobile_preview.png)
-
-Edit Profile Page:
+Make Post Page:
 ![edit_profile_desktop_preview](documentation_assets/images/edit_profile_desktop_preview.png)
 
-![edit_profile_mobile_preview](documentation_assets/images/edit_profile_mobile_preview.png)
-
-Register Page:
+Edit Post Page:
 ![register_desktop_preview](documentation_assets/images/register_desktop_preview.png)
 
-![register_mobile_preview](documentation_assets/images/register_mobile_preview.png)
-
-Sign In Page:
+Delete Post Page:
 ![sign_in_desktop_preview](documentation_assets/images/sign_in_desktop_preview.png)
 
-![sign_in_mobile_preview](documentation_assets/images/sign_in_mobile_preview.png)
-
-Sign Out Page:
+Comment Form:
 ![sign_out_desktop_preview](documentation_assets/images/sign_out_desktop_preview.png)
 
-![sign_out_mobile_preview](documentation_assets/images/sign_out_mobile_preview.png)
+Delete Comment Page:
+![sign_out_desktop_preview](documentation_assets/images/sign_out_desktop_preview.png)
 
 <a name="bugs"></a>
 
-# 8. Bugs
+# 7. Bugs
 
 [Go to the top](#table-of-contents)
 
 - There is a * next to the labels in the form submissions for creating a new post and editing a post.  That is not designed and I couldn't figure out a way to remove it. 
 
-- 
-
 <a name="credits"></a>
 
-# 9. Credits
+# 8. Credits
 
 [Go to the top](#table-of-contents)
 
-### Code
--   The navigation bar came from [Bootstrap](https://getbootstrap.com/docs/5.0/components/navbar).
+I used the "I Think Therefore I Blog" module as an effective skeleton for my site.  As such, several base pieces still resemble the code covered in that video.  
 
-- 
+-   settings.py, admin.py, apps.py, models.py, views.py, manage.py, env.py, urls.py, base.html, post_detail.html, post_list.html, and requirements.txt skeleton and boilerplate django code from https://learn.codeinstitute.net/
+-   Instances of pagination code taken from https://learn.codeinstitute.net/
+-   Inspiration for a form based approach to making new posts and editing existing posts taken from https://github.com/josswe26/code-buddy
+-   README skeleton copied from a supplied project my my code institute mentor. While almost all contained information was tailored to my own project, certain pieces retained accuracy across the two. Take for example the "technologies used" section.  It follows that I used the exact same technologies as the student whose README structure I followed, so that section remains largely the same. Credit to https://github.com/iKelvvv/MS4/, who made an excellent README.
 
-### Content
--   
+
+Special thanks to mentor Marcel for efficient and remarkably pinpoint accurate advice, as always. 
